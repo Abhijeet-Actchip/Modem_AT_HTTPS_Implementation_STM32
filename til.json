@@ -1,0 +1,190 @@
+{
+	"1036": {
+		"Type": "trice",
+		"Strg": "dbg: SSL Certs Uploaded\\n"
+	},
+	"1127": {
+		"Type": "trice",
+		"Strg": "err: HttpsMgrTask creation failed\\n"
+	},
+	"1262": {
+		"Type": "trice",
+		"Strg": "dbg: Echo Success\\n"
+	},
+	"1279": {
+		"Type": "trice32",
+		"Strg": "err: HTTP SSL Enable Failed, %d\\n"
+	},
+	"1603": {
+		"Type": "trice8",
+		"Strg": "dbg: Data Registered, status %d\\n"
+	},
+	"1626": {
+		"Type": "trice",
+		"Strg": "dbg: PDP Ctx Activated\\n"
+	},
+	"1703": {
+		"Type": "trice",
+		"Strg": "dbg: Power OFF logic done.\\n"
+	},
+	"1787": {
+		"Type": "TRice",
+		"Strg": "WARNING:USARTq OverRun Error Flag is set!\\n"
+	},
+	"1812": {
+		"Type": "trice",
+		"Strg": "err: NW Manager Error state, resetting...\\n"
+	},
+	"1843": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: TriceSingleMaxWordCount %d\\n"
+	},
+	"1845": {
+		"Type": "trice32",
+		"Strg": "err: PDP Ctx Activation Failed, %d\\n"
+	},
+	"1962": {
+		"Type": "trice32",
+		"Strg": "err: HTTP Request Failed, %d\\n"
+	},
+	"2125": {
+		"Type": "trice",
+		"Strg": "dbg: MODEM Reset logic done.\\n"
+	},
+	"2689": {
+		"Type": "trice",
+		"Strg": "dbg: Uploading SSL Certs\\n"
+	},
+	"2781": {
+		"Type": "trice",
+		"Strg": "dbg: HttpsATMgrInit Success\\n"
+	},
+	"2805": {
+		"Type": "trice",
+		"Strg": "dbg: Power ON logic done.\\n"
+	},
+	"2919": {
+		"Type": "trice",
+		"Strg": "dbg: Echo Failed, %d\\n"
+	},
+	"3010": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: HTTP-AT-MGR stack rem = %d \\n"
+	},
+	"3313": {
+		"Type": "trice",
+		"Strg": "dbg: Configuring SSL\\n"
+	},
+	"3335": {
+		"Type": "trice32",
+		"Strg": "dbg: PDP Ctx Config Failed, %d\\n"
+	},
+	"4251": {
+		"Type": "trice0",
+		"Strg": "dbg: Power OFF logic done.\\n"
+	},
+	"4262": {
+		"Type": "trice",
+		"Strg": "dbg: Sync Success\\n"
+	},
+	"4355": {
+		"Type": "trice",
+		"Strg": "dbg: Sending HTTP GET\\n"
+	},
+	"4358": {
+		"Type": "trice8",
+		"Strg": "dbg: NW Registered, status %d\\n"
+	},
+	"4544": {
+		"Type": "trice",
+		"Strg": "err::%u \\n"
+	},
+	"4669": {
+		"Type": "TRICE_S",
+		"Strg": "rx:received command:%s\\n"
+	},
+	"4744": {
+		"Type": "trice",
+		"Strg": "dbg: PDP Ctx Config Success\\n"
+	},
+	"4780": {
+		"Type": "trice32",
+		"Strg": "err: Set URL Failed, %d\\n"
+	},
+	"4944": {
+		"Type": "trice",
+		"Strg": "dbg: Request Success, reading response...\\n"
+	},
+	"5297": {
+		"Type": "trice",
+		"Strg": "dbg: HTTPS Activating PDP Ctx\\n"
+	},
+	"5329": {
+		"Type": "trice",
+		"Strg": "dbg: HTTPS Manager IDLE\\n"
+	},
+	"5439": {
+		"Type": "trice32",
+		"Strg": "dbg: Echo Failed, %d\\n"
+	},
+	"5843": {
+		"Type": "trice",
+		"Strg": "dbg: Sending HTTP POST\\n"
+	},
+	"5906": {
+		"Type": "trice32",
+		"Strg": "err: Set CA Cert Path Failed, %d\\n"
+	},
+	"5942": {
+		"Type": "trice",
+		"Strg": "err: Data Reg Timeout\\n"
+	},
+	"6093": {
+		"Type": "trice32",
+		"Strg": "dbg: Sync Failed, %d"
+	},
+	"6263": {
+		"Type": "trice",
+		"Strg": "dbg: NW State RESET\\n"
+	},
+	"6600": {
+		"Type": "trice32",
+		"Strg": "err: SSL Certs Upload Failed, %d\\n"
+	},
+	"7071": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: TriceHalfBufferDepthMax %d\\n"
+	},
+	"7262": {
+		"Type": "trice8",
+		"Strg": "dbg: Sync Failed, %d"
+	},
+	"7449": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: DTE-Task-MGR stack rem = %d \\n"
+	},
+	"7472": {
+		"Type": "trice32",
+		"Strg": "dbg: Processing packet, len %d\\n"
+	},
+	"7482": {
+		"Type": "trice",
+		"Strg": "err: NW Reg Timeout\\n"
+	},
+	"7489": {
+		"Type": "trice",
+		"Strg": "dbg: HttpsMgrTask Started\\n"
+	},
+	"7829": {
+		"Type": "trice",
+		"Strg": "dbg: Configuring HTTP\\n"
+	},
+	"7868": {
+		"Type": "TRICE_S",
+		"Strg": "err: Assert triggered %s "
+	},
+	"7888": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: Diag Mgr stack rem = %d \\n"
+	}
+}
