@@ -14,6 +14,7 @@
 #include "utils/assert/app_assert.h"
 #include "diag_svc.h"
 #include "https_common.h"
+#include "appmgr.h"
 
 void SetupHTTPConfig(httpsAgentConfig_t *var)
 {
@@ -21,7 +22,7 @@ void SetupHTTPConfig(httpsAgentConfig_t *var)
 	var->nwReadyBit = 0;
 
 	strncpy(var->baseUrl, APP_HTTPS_URL, sizeof(var->baseUrl) - 1);
-	var->contentType = HTTP_CONTENT_APPLICATION_JSON;
+	var->contentType = HTTP_CONTENT_APPLICATION_X_WWW_FORM_URLENCODED;
 	strncpy(var->readApiKey, APP_HTTPS_READ_API_KEY, sizeof(var->readApiKey) - 1);
 	strncpy(var->writeApiKey, APP_HTTPS_WRITE_API_KEY, sizeof(var->writeApiKey) - 1);
 	var->useTLS = APP_USE_TLS;
@@ -38,11 +39,13 @@ int main(void)
 	APP_ASSERT(retVal == APP_ERR_NONE);
 
 	SetupHTTPConfig(&httpCfg);
-
-	retVal = DiagSvcInit();
+	retVal = HttpsCommonMgrInit(&httpCfg);
 	APP_ASSERT(retVal == APP_ERR_NONE);
 
-	retVal = HttpsCommonMgrInit(&httpCfg);
+	retVal = AppMgrInit();
+	APP_ASSERT(retVal == APP_ERR_NONE);
+
+	retVal = DiagSvcInit();
 	APP_ASSERT(retVal == APP_ERR_NONE);
 
 	APPHAL_WDT_Clear();

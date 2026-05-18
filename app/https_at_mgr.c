@@ -20,7 +20,7 @@
 #define PDP_CTX_IN_USE              1
 #define SSL_CTX_IN_USE              0
 #define HTTP_CTX_IN_USE             0
-#define NETWORK_REG_DELAY_SEC       120
+#define NETWORK_REG_DELAY_SEC       75
 #define CA_CERT_PATH                "cacert.crt"
 
 typedef enum _nw_mgr_states_t
@@ -61,7 +61,7 @@ static void PowerOffModem(void)
     APPHAL_Delay(3500);
     Board_CtrlModemPwrKey(0);
 
-    APPHAL_Delay(10000);
+    APPHAL_Delay(30000);
     trice(iD(1703), "dbg: Power OFF logic done.\n");
 }
 
@@ -79,7 +79,7 @@ static void PowerOnModem(void)
 void ResetModem(void)
 {
     PowerOffModem();
-    APPHAL_Delay(pdMS_TO_TICKS(1000));
+    APPHAL_Delay(pdMS_TO_TICKS(5000));
     PowerOnModem();
     trice(iD(2125), "dbg: MODEM Reset logic done.\n");
 }
@@ -404,8 +404,9 @@ int8_t HttpsATMgrInit(httpsAgentConfig_t *config)
 
 
     /* Create Https Manager Task */
-    if(xTaskCreate(HttpsMgrTask, "HttpsMgrTask", MODEM_HTTP_STACK_SIZE, 
-                   config, MODEM_HTTP_PRIORITY, &httpTaskHandle) != pdPASS)
+    BaseType_t status = xTaskCreate(HttpsMgrTask, "HttpsMgrTask", MODEM_HTTP_STACK_SIZE,
+                   config, MODEM_HTTP_PRIORITY, &httpTaskHandle);
+    if(status != pdTRUE)
     {
         trice(iD(1127), "err: HttpsMgrTask creation failed\n");
         return APP_ERR_NO_MEM;

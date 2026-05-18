@@ -107,7 +107,9 @@ static uint16_t pubsubErrCount = 0;
 static void PowerOffModem(void)
 {
 //    ESP_LOGI(TAG, "POFF: Turning OFF Modem.");
-    Board_EnableModemPower(0);
+	Board_CtrlModemPwrKey(0);
+	APPHAL_Delay(2500);
+	Board_CtrlModemPwrKey(1);
     APPHAL_Delay(5000);
 //    ESP_LOGI(TAG, "POFF: Power off logic done.");
 }

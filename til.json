@@ -3,6 +3,10 @@
 		"Type": "trice",
 		"Strg": "dbg: SSL Certs Uploaded\\n"
 	},
+	"1121": {
+		"Type": "trice",
+		"Strg": "dbg: Publishing data to HTTPS Q...\\n"
+	},
 	"1127": {
 		"Type": "trice",
 		"Strg": "err: HttpsMgrTask creation failed\\n"
@@ -127,6 +131,10 @@
 		"Type": "trice32",
 		"Strg": "dbg: Echo Failed, %d\\n"
 	},
+	"5813": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: APP-MGR stack rem = %d \\n"
+	},
 	"5843": {
 		"Type": "trice",
 		"Strg": "dbg: Sending HTTP POST\\n"
@@ -150,6 +158,10 @@
 	"6600": {
 		"Type": "trice32",
 		"Strg": "err: SSL Certs Upload Failed, %d\\n"
+	},
+	"6722": {
+		"Type": "trice",
+		"Strg": "dbg: Failed to create AppMgr task\\n"
 	},
 	"7071": {
 		"Type": "trice32",

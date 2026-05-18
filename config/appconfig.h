@@ -23,11 +23,14 @@
 #define DIAG_SVC_STACK_SIZE			(512)
 #define DIAG_SVC_PRIORITY			(tskIDLE_PRIORITY + 1)
 
-#define MODEM_HTTP_STACK_SIZE		(1024)
+#define MODEM_HTTP_STACK_SIZE		(512)
 #define MODEM_HTTP_PRIORITY			(tskIDLE_PRIORITY + 5)
 
-#define STACK_DTE_UART				(1024)
+#define STACK_DTE_UART				(512)
 #define PRIORITY_DTE_UART			(tskIDLE_PRIORITY + 5)
+
+#define STACK_APPMGR				(256)
+#define PRIORITY_APPMGR				(tskIDLE_PRIORITY + 4)
 
 /* HTTPS configurations */
 #define HTTP_METHOD_GET             0
@@ -45,7 +48,7 @@
 
 /*!< Enable Watchdog timer. (Should be enabled on production builds
  * disabled when debugging.) */
-#define APP_WDT_EN					1
+#define APP_WDT_EN					0
 
 /* Error codes returned by functions. */
 #define APP_ERR_NONE                0

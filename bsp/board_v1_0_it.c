@@ -123,24 +123,35 @@ void TIM6_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles USART1 global interrupt / USART1 wake-up interrupt through EXTI line 25.
+  * @brief This function handles USART2 global interrupt / USART2 wake-up interrupt through EXTI line 26.
   */
-void USART1_IRQHandler(void)
+void USART2_IRQHandler(void)
 {
-  /* USER CODE BEGIN USART1_IRQn 0 */
+  /* USER CODE BEGIN USART2_IRQn 0 */
 
-  /* USER CODE END USART1_IRQn 0 */
-  /* If Read Data Register Not Empty ? */
-	if(LL_USART_IsActiveFlag_RXNE(TRICE_UARTB))
+  /* USER CODE END USART2_IRQn 0 */
+  HAL_UART_IRQHandler(&huart2);
+  /* USER CODE BEGIN USART2_IRQn 1 */
+
+  /* USER CODE END USART2_IRQn 1 */
+}
+
+/**
+  * @brief This function handles LPUART1 global interrupt / LPUART1 wake-up interrupt through EXTI line 28.
+  */
+void LPUART1_IRQHandler(void)
+{
+	/* If Read Data Register Not Empty ? */
+	if(LL_LPUART_IsActiveFlag_RXNE(TRICE_UARTA))
 	{
 		static char rxBuf[TRICE_COMMAND_SIZE_MAX+1]; // with terminating 0
 		static int index = 0;
 		uint8_t v;
-		if( LL_USART_IsActiveFlag_ORE(TRICE_UARTB) )
+		if( LL_LPUART_IsActiveFlag_ORE(TRICE_UARTA) )
 		{
 			TRice(iD(1787), "WARNING:USARTq OverRun Error Flag is set!\n" );
 		}
-		v = LL_USART_ReceiveData8(TRICE_UARTB); // implicit clears the flag
+		v = LL_LPUART_ReceiveData8(TRICE_UARTA); // implicit clears the flag
 		rxBuf[index] = (char)v;
 		index += index < TRICE_COMMAND_SIZE_MAX ? 1 : 0;
 		if( v == 0 )
@@ -154,26 +165,9 @@ void USART1_IRQHandler(void)
 	}
 
 	/* Transmit Data Register Empty Flag */
-	if(LL_USART_IsActiveFlag_TXE(TRICE_UARTB))
+	if(LL_LPUART_IsActiveFlag_TXE(TRICE_UARTA))
 	{
-		triceServeTransmitUartB();
+		triceServeTransmitUartA();
 		return;
 	}
-  /* USER CODE BEGIN USART1_IRQn 1 */
-
-  /* USER CODE END USART1_IRQn 1 */
-}
-
-/**
-  * @brief This function handles USART2 global interrupt / USART2 wake-up interrupt through EXTI line 26.
-  */
-void USART2_IRQHandler(void)
-{
-  /* USER CODE BEGIN USART2_IRQn 0 */
-
-  /* USER CODE END USART2_IRQn 0 */
-  HAL_UART_IRQHandler(&huart2);
-  /* USER CODE BEGIN USART2_IRQn 1 */
-
-  /* USER CODE END USART2_IRQn 1 */
 }

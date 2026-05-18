@@ -15,6 +15,7 @@
 #include "utils/trice/trice.h"
 #include "utils/assert/app_assert.h"
 #include "https_at_mgr.h"
+#include "appmgr.h"
 
 /* NOTE: mmurty: Using externs is a bad practice but these variables are not
  * accessible from the logger library. So this is the last resort. */
@@ -45,6 +46,7 @@ void DiagSvcTask(void *args)
 
 		/* TODO: Print diagnostic data for all tasks */
 		HttpAtMgrPrintDiags();
+		AppMgrPrintDiags();
 
 		/* Get remaining stack space of this task and log it */
 		space = uxTaskGetStackHighWaterMark(taskHandle) * sizeof(StackType_t);

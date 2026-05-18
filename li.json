@@ -3,9 +3,13 @@
 		"File": "https_at_mgr.c",
 		"Line": 308
 	},
+	"1121": {
+		"File": "appmgr.c",
+		"Line": 31
+	},
 	"1127": {
 		"File": "https_at_mgr.c",
-		"Line": 410
+		"Line": 411
 	},
 	"1262": {
 		"File": "https_at_mgr.c",
@@ -29,7 +33,7 @@
 	},
 	"1787": {
 		"File": "board_v1_0_it.c",
-		"Line": 141
+		"Line": 152
 	},
 	"1812": {
 		"File": "https_at_mgr.c",
@@ -37,7 +41,7 @@
 	},
 	"1843": {
 		"File": "diag_svc.c",
-		"Line": 53
+		"Line": 55
 	},
 	"1845": {
 		"File": "https_at_mgr.c",
@@ -57,7 +61,7 @@
 	},
 	"2781": {
 		"File": "https_at_mgr.c",
-		"Line": 413
+		"Line": 414
 	},
 	"2805": {
 		"File": "https_at_mgr.c",
@@ -69,7 +73,7 @@
 	},
 	"3010": {
 		"File": "https_at_mgr.c",
-		"Line": 423
+		"Line": 424
 	},
 	"3313": {
 		"File": "https_at_mgr.c",
@@ -101,7 +105,7 @@
 	},
 	"4669": {
 		"File": "board_v1_0_it.c",
-		"Line": 148
+		"Line": 159
 	},
 	"4744": {
 		"File": "https_at_mgr.c",
@@ -127,6 +131,10 @@
 		"File": "https_at_mgr.c",
 		"Line": 131
 	},
+	"5813": {
+		"File": "appmgr.c",
+		"Line": 82
+	},
 	"5843": {
 		"File": "https_at_mgr.c",
 		"Line": 235
@@ -151,9 +159,13 @@
 		"File": "https_at_mgr.c",
 		"Line": 314
 	},
+	"6722": {
+		"File": "appmgr.c",
+		"Line": 70
+	},
 	"7071": {
 		"File": "diag_svc.c",
-		"Line": 54
+		"Line": 56
 	},
 	"7262": {
 		"File": "https_at_mgr.c",
@@ -161,7 +173,7 @@
 	},
 	"7449": {
 		"File": "modem_dte.c",
-		"Line": 417
+		"Line": 419
 	},
 	"7472": {
 		"File": "https_at_mgr.c",
@@ -185,6 +197,6 @@
 	},
 	"7888": {
 		"File": "diag_svc.c",
-		"Line": 51
+		"Line": 53
 	}
 }
