@@ -124,7 +124,7 @@ static void MX_USART1_UART_Init(void)
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
   GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
   LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -132,7 +132,7 @@ static void MX_USART1_UART_Init(void)
   GPIO_InitStruct.Mode = LL_GPIO_MODE_ALTERNATE;
   GPIO_InitStruct.Speed = LL_GPIO_SPEED_FREQ_VERY_HIGH;
   GPIO_InitStruct.OutputType = LL_GPIO_OUTPUT_PUSHPULL;
-  GPIO_InitStruct.Pull = LL_GPIO_PULL_NO;
+  GPIO_InitStruct.Pull = LL_GPIO_PULL_UP;
   GPIO_InitStruct.Alternate = LL_GPIO_AF_4;
   LL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
@@ -442,6 +442,8 @@ int8_t Board_InitPeripherals(void)
 	{
 		return retVal;
 	}
+
+	Board_EnableModemPower(1);
 
 	return retVal;
 }
