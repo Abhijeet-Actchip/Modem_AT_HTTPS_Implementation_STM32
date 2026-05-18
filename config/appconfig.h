@@ -32,10 +32,15 @@
 /* HTTPS configurations */
 #define HTTP_METHOD_GET             0
 #define HTTP_METHOD_POST            1
+
+#define APP_TS_HTTPS_CHANNEL_ID     3373681
 #define HTTP_METHOD_USE             HTTP_METHOD_POST
 #define APP_HTTPS_URL               "https://api.thingspeak.com/update.json"
+#define APP_HTTPS_WRITE_API_KEY     "LCSF5OF3SCQZOP6U"
+#define APP_HTTPS_READ_API_KEY      "HYZJX14GWRIRBF4I"
 #define HTTP_RX_QUEUE_SIZE          10
 #define HTTP_TX_QUEUE_SIZE          10
+#define APP_USE_TLS					0
 
 
 /*!< Enable Watchdog timer. (Should be enabled on production builds
