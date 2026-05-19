@@ -1165,11 +1165,11 @@ int8_t EC200DCEHTTPSetURLStr(ec200_dce_t *dce, uint8_t httpCtxId, uint8_t *urlSt
     char cmdStr[48];
     modem_cmd_t txCmd = { .cmd = cmdStr, .handler = qfupl_resp_handler };
     if(dce == NULL || urlStr == NULL || urlLen == 0) return retVal;
-    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPURL=%d,80\r", urlLen);
-    retVal = ModemDTESendWait(dce->super.dte, &txCmd, MODEM_CMD_TO_DEF);
+    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPURL=%d,%d\r", urlLen, EC200_QHTTP_INPUT_TIMEOUT_S);
+    retVal = ModemDTESendWait(dce->super.dte, &txCmd, EC200_CMD_TO_QHTTP_INPUT);
     if(retVal == APP_ERR_NONE) {
         modem_data_t txData = { .data = urlStr, .dataLen = urlLen, .noResp = 0, .handler = default_resp_handler };
-        retVal = ModemDTESendData(dce->super.dte, &txData, MODEM_CMD_TO_DEF);
+        retVal = ModemDTESendData(dce->super.dte, &txData, 5000);
     }
     return retVal;
 }
@@ -1228,7 +1228,7 @@ int8_t EC200DCEHTTPGet(ec200_dce_t *dce, uint8_t httpCtxId, uint16_t rsptime, ui
     if(data != NULL && dataLen > 0) {
         txCmd.handler = qfupl_resp_handler;
         snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPGET=%d,%d\r", rsptime, dataLen);
-        retVal = ModemDTESendWait(dce->super.dte, &txCmd, MODEM_CMD_TO_DEF);
+        retVal = ModemDTESendWait(dce->super.dte, &txCmd, EC200_CMD_TO_QHTTP_INPUT);
         if(retVal == APP_ERR_NONE) {
             modem_data_t txData = { .data = data, .dataLen = dataLen, .noResp = 0, .handler = qhttp_cmd_resp_handler };
             retVal = ModemDTESendData(dce->super.dte, &txData, rsptime * 1000);
@@ -1246,8 +1246,8 @@ int8_t EC200DCEHTTPPost(ec200_dce_t *dce, uint8_t httpCtxId, uint8_t *data, uint
     char cmdStr[64];
     modem_cmd_t txCmd = { .cmd = cmdStr, .handler = qfupl_resp_handler };
     if(dce == NULL || data == NULL || dataLen == 0) return retVal;
-    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPPOST=%d,80,%d\r", dataLen, rsptime);
-    retVal = ModemDTESendWait(dce->super.dte, &txCmd, MODEM_CMD_TO_DEF);
+    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPPOST=%d,%d,%d\r", dataLen, EC200_QHTTP_INPUT_TIMEOUT_S, rsptime);
+    retVal = ModemDTESendWait(dce->super.dte, &txCmd, EC200_CMD_TO_QHTTP_INPUT);
     if(retVal == APP_ERR_NONE) {
         modem_data_t txData = { .data = data, .dataLen = dataLen, .noResp = 0, .handler = qhttp_cmd_resp_handler };
         retVal = ModemDTESendData(dce->super.dte, &txData, rsptime * 1000);
@@ -1261,8 +1261,8 @@ int8_t EC200DCEHTTPPut(ec200_dce_t *dce, uint8_t httpCtxId, uint8_t *data, uint1
     char cmdStr[64];
     modem_cmd_t txCmd = { .cmd = cmdStr, .handler = qfupl_resp_handler };
     if(dce == NULL || data == NULL || dataLen == 0) return retVal;
-    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPPUT=%d,80,%d\r", dataLen, rsptime);
-    retVal = ModemDTESendWait(dce->super.dte, &txCmd, MODEM_CMD_TO_DEF);
+    snprintf(cmdStr, sizeof(cmdStr), "AT+QHTTPPUT=%d,%d,%d\r", dataLen, EC200_QHTTP_INPUT_TIMEOUT_S, rsptime);
+    retVal = ModemDTESendWait(dce->super.dte, &txCmd, EC200_CMD_TO_QHTTP_INPUT);
     if(retVal == APP_ERR_NONE) {
         modem_data_t txData = { .data = data, .dataLen = dataLen, .noResp = 0, .handler = qhttp_cmd_resp_handler };
         retVal = ModemDTESendData(dce->super.dte, &txData, rsptime * 1000);

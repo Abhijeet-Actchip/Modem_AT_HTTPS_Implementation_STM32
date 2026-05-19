@@ -1,11 +1,15 @@
 {
 	"1036": {
 		"File": "https_at_mgr.c",
-		"Line": 308
+		"Line": 297
+	},
+	"1121": {
+		"File": "appmgr.c",
+		"Line": 32
 	},
 	"1127": {
 		"File": "https_at_mgr.c",
-		"Line": 410
+		"Line": 414
 	},
 	"1262": {
 		"File": "https_at_mgr.c",
@@ -13,15 +17,19 @@
 	},
 	"1279": {
 		"File": "https_at_mgr.c",
-		"Line": 341
+		"Line": 330
 	},
 	"1603": {
 		"File": "https_at_mgr.c",
 		"Line": 189
 	},
+	"1611": {
+		"File": "https_at_mgr.c",
+		"Line": 355
+	},
 	"1626": {
 		"File": "https_at_mgr.c",
-		"Line": 284
+		"Line": 273
 	},
 	"1703": {
 		"File": "https_at_mgr.c",
@@ -37,15 +45,15 @@
 	},
 	"1843": {
 		"File": "diag_svc.c",
-		"Line": 53
+		"Line": 55
 	},
 	"1845": {
 		"File": "https_at_mgr.c",
-		"Line": 296
+		"Line": 285
 	},
 	"1962": {
 		"File": "https_at_mgr.c",
-		"Line": 257
+		"Line": 251
 	},
 	"2125": {
 		"File": "https_at_mgr.c",
@@ -53,11 +61,11 @@
 	},
 	"2689": {
 		"File": "https_at_mgr.c",
-		"Line": 304
+		"Line": 293
 	},
 	"2781": {
 		"File": "https_at_mgr.c",
-		"Line": 413
+		"Line": 417
 	},
 	"2805": {
 		"File": "https_at_mgr.c",
@@ -69,15 +77,27 @@
 	},
 	"3010": {
 		"File": "https_at_mgr.c",
-		"Line": 423
+		"Line": 427
+	},
+	"3264": {
+		"File": "appmgr.c",
+		"Line": 33
 	},
 	"3313": {
 		"File": "https_at_mgr.c",
-		"Line": 325
+		"Line": 314
 	},
 	"3335": {
 		"File": "https_at_mgr.c",
 		"Line": 154
+	},
+	"3468": {
+		"File": "https_at_mgr.c",
+		"Line": 356
+	},
+	"3487": {
+		"File": "appmgr.c",
+		"Line": 33
 	},
 	"4251": {
 		"File": "https_at_mgr.c",
@@ -89,7 +109,7 @@
 	},
 	"4355": {
 		"File": "https_at_mgr.c",
-		"Line": 240
+		"Line": 234
 	},
 	"4358": {
 		"File": "https_at_mgr.c",
@@ -98,6 +118,10 @@
 	"4544": {
 		"File": "app_assert.h",
 		"Line": 21
+	},
+	"4575": {
+		"File": "appmgr.c",
+		"Line": 33
 	},
 	"4669": {
 		"File": "board_v1_0_it.c",
@@ -109,35 +133,47 @@
 	},
 	"4780": {
 		"File": "https_at_mgr.c",
-		"Line": 262
+		"Line": 349
 	},
 	"4944": {
 		"File": "https_at_mgr.c",
-		"Line": 251
+		"Line": 245
+	},
+	"5060": {
+		"File": "https_common.c",
+		"Line": 189
 	},
 	"5297": {
 		"File": "https_at_mgr.c",
-		"Line": 280
+		"Line": 269
 	},
 	"5329": {
 		"File": "https_at_mgr.c",
-		"Line": 355
+		"Line": 359
 	},
 	"5439": {
 		"File": "https_at_mgr.c",
 		"Line": 131
 	},
+	"5813": {
+		"File": "appmgr.c",
+		"Line": 89
+	},
 	"5843": {
 		"File": "https_at_mgr.c",
-		"Line": 235
+		"Line": 229
 	},
 	"5906": {
 		"File": "https_at_mgr.c",
-		"Line": 329
+		"Line": 318
 	},
 	"5942": {
 		"File": "https_at_mgr.c",
 		"Line": 198
+	},
+	"5958": {
+		"File": "appmgr.c",
+		"Line": 37
 	},
 	"6093": {
 		"File": "https_at_mgr.c",
@@ -147,13 +183,25 @@
 		"File": "https_at_mgr.c",
 		"Line": 111
 	},
+	"6377": {
+		"File": "appmgr.c",
+		"Line": 33
+	},
 	"6600": {
 		"File": "https_at_mgr.c",
-		"Line": 314
+		"Line": 303
+	},
+	"6722": {
+		"File": "appmgr.c",
+		"Line": 77
+	},
+	"6916": {
+		"File": "appmgr.c",
+		"Line": 61
 	},
 	"7071": {
 		"File": "diag_svc.c",
-		"Line": 54
+		"Line": 56
 	},
 	"7262": {
 		"File": "https_at_mgr.c",
@@ -161,7 +209,7 @@
 	},
 	"7449": {
 		"File": "modem_dte.c",
-		"Line": 417
+		"Line": 419
 	},
 	"7472": {
 		"File": "https_at_mgr.c",
@@ -173,11 +221,11 @@
 	},
 	"7489": {
 		"File": "https_at_mgr.c",
-		"Line": 374
+		"Line": 378
 	},
 	"7829": {
 		"File": "https_at_mgr.c",
-		"Line": 349
+		"Line": 338
 	},
 	"7868": {
 		"File": "app_assert.h",
@@ -185,6 +233,6 @@
 	},
 	"7888": {
 		"File": "diag_svc.c",
-		"Line": 51
+		"Line": 53
 	}
 }

@@ -225,47 +225,36 @@ static void ProcessTxQueue(httpsAgentConfig_t *config)
             {
                 int8_t retVal;
                 
-                /* Set URL first */
-                retVal = EC200DCEHTTPSetURLStr(&modemDCE, HTTP_CTX_IN_USE, 
-                                              (uint8_t *)config->baseUrl, strlen(config->baseUrl));
+                #if (HTTP_METHOD_USE == HTTP_METHOD_POST)
+                    trice(iD(5843), "dbg: Sending HTTP POST\n");
+                    retVal = EC200DCEHTTPPost(&modemDCE, HTTP_CTX_IN_USE, 
+                                             dataPktPtr->dataPtr, dataPktPtr->dataLen, 
+                                             80);
+                #elif (HTTP_METHOD_USE == HTTP_METHOD_GET)
+                    trice(iD(4355), "dbg: Sending HTTP GET\n");
+                    /* For GET, we might need to append parameters from dataPtr to baseUrl 
+                     * but for simplicity we follow the XML which sends URL once.
+                     * If URL is already set, we just trigger GET.
+                     */
+                    retVal = EC200DCEHTTPGet(&modemDCE, HTTP_CTX_IN_USE, 
+                                            config->responseTimeMs / 1000, NULL, 0);
+                #endif
                 
                 if(retVal == APP_ERR_NONE)
                 {
-                    #if (HTTP_METHOD_USE == HTTP_METHOD_POST)
-                        trice(iD(5843), "dbg: Sending HTTP POST\n");
-                        retVal = EC200DCEHTTPPost(&modemDCE, HTTP_CTX_IN_USE, 
-                                                 dataPktPtr->dataPtr, dataPktPtr->dataLen, 
-                                                 config->responseTimeMs / 1000);
-                    #elif (HTTP_METHOD_USE == HTTP_METHOD_GET)
-                        trice(iD(4355), "dbg: Sending HTTP GET\n");
-                        /* For GET, we might need to append parameters from dataPtr to baseUrl 
-                         * but for simplicity we follow the XML which sends URL once.
-                         * If URL is already set, we just trigger GET.
-                         */
-                        retVal = EC200DCEHTTPGet(&modemDCE, HTTP_CTX_IN_USE, 
-                                                config->responseTimeMs / 1000, NULL, 0);
-                    #endif
-                    
-                    if(retVal == APP_ERR_NONE)
-                    {
-                        trice(iD(4944), "dbg: Request Success, reading response...\n");
-                        /* Request sent successfully, wait for response or read response */
-                        EC200DCEHTTPRead(&modemDCE, HTTP_CTX_IN_USE, config->timeoutMs / 1000);
-                    }
-                    else
-                    {
-                        trice32(iD(1962), "err: HTTP Request Failed, %d\n", retVal);
-                    }
+                    trice(iD(4944), "dbg: Request Success, reading response...\n");
+                    /* Request sent successfully, wait for response or read response */
+                    EC200DCEHTTPRead(&modemDCE, HTTP_CTX_IN_USE, 80);
                 }
                 else
                 {
-                    trice32(iD(4780), "err: Set URL Failed, %d\n", retVal);
+                    trice32(iD(1962), "err: HTTP Request Failed, %d\n", retVal);
                 }
             }
             
             /* Free memory */
-            if(dataPktPtr->dataPtr) free(dataPktPtr->dataPtr);
-            free(dataPktPtr);
+            vPortFree(dataPktPtr->dataPtr);
+            vPortFree(dataPktPtr);
         }
     }
 }
@@ -352,6 +341,21 @@ static void HttpsMgmtStateMc(httpsAgentConfig_t *config)
             EC200DCEHTTPCustomizeReqHeaderEn(&modemDCE, HTTP_CTX_IN_USE, 0);
             EC200DCEHTTPCustomizeRespHeaderEn(&modemDCE, HTTP_CTX_IN_USE, 0);
             
+            /* Set URL once */
+            retVal = EC200DCEHTTPSetURLStr(&modemDCE, HTTP_CTX_IN_USE, 
+                                          (uint8_t *)config->baseUrl, strlen(config->baseUrl));
+            if(retVal != APP_ERR_NONE)
+            {
+                trice32(iD(4780), "err: Set URL Failed, %d\n", retVal);
+                nwState = NW_MGR_STATE_ERROR;
+                break;
+            }
+            else
+            {
+            	trice(iD(1611), "dbg: Set URL success,\n");
+            	TRICE_S(id(3468), "dbg: URL: %s\n", config->baseUrl);
+            }
+
             trice(iD(5329), "dbg: HTTPS Manager IDLE\n");
             httpsState = HTTPS_MGR_STATE_IDLE;
             break;

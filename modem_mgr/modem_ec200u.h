@@ -32,6 +32,9 @@
 #define EC200_CMD_TO_QMTDISC            (30000)      /*!< Timeout value for QMTDISC command */
 #define EC200_CMD_TO_QMTSUB             (15000)     /*!< Timeout value for QMTSUB command */
 
+#define EC200_QHTTP_INPUT_TIMEOUT_S     (80)        /*!< HTTP input timeout in seconds (wait for CONNECT) */
+#define EC200_CMD_TO_QHTTP_INPUT        (EC200_QHTTP_INPUT_TIMEOUT_S * 1000) /*!< Timeout value for QHTTP input (ms) */
+
 typedef struct _ec200_dce_t
 {
     modem_dce_t super;

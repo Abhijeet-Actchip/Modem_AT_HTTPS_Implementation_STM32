@@ -3,6 +3,10 @@
 		"Type": "trice",
 		"Strg": "dbg: SSL Certs Uploaded\\n"
 	},
+	"1121": {
+		"Type": "trice",
+		"Strg": "dbg: Publishing data to HTTPS Q...\\n"
+	},
 	"1127": {
 		"Type": "trice",
 		"Strg": "err: HttpsMgrTask creation failed\\n"
@@ -18,6 +22,10 @@
 	"1603": {
 		"Type": "trice8",
 		"Strg": "dbg: Data Registered, status %d\\n"
+	},
+	"1611": {
+		"Type": "trice",
+		"Strg": "dbg: Set URL success,\\n"
 	},
 	"1626": {
 		"Type": "trice",
@@ -71,6 +79,10 @@
 		"Type": "trice32",
 		"Strg": "dbg: diag: HTTP-AT-MGR stack rem = %d \\n"
 	},
+	"3264": {
+		"Type": "TRICE_S",
+		"Strg": "dbg: Pub Data: %s"
+	},
 	"3313": {
 		"Type": "trice",
 		"Strg": "dbg: Configuring SSL\\n"
@@ -78,6 +90,14 @@
 	"3335": {
 		"Type": "trice32",
 		"Strg": "dbg: PDP Ctx Config Failed, %d\\n"
+	},
+	"3468": {
+		"Type": "TRICE_S",
+		"Strg": "dbg: URL: %s\\n"
+	},
+	"3487": {
+		"Type": "trice32",
+		"Strg": "dbg: Pub Data: %s"
 	},
 	"4251": {
 		"Type": "trice0",
@@ -99,6 +119,10 @@
 		"Type": "trice",
 		"Strg": "err::%u \\n"
 	},
+	"4575": {
+		"Type": "triceS",
+		"Strg": "Pub Data: %s"
+	},
 	"4669": {
 		"Type": "TRICE_S",
 		"Strg": "rx:received command:%s\\n"
@@ -115,6 +139,10 @@
 		"Type": "trice",
 		"Strg": "dbg: Request Success, reading response...\\n"
 	},
+	"5060": {
+		"Type": "trice",
+		"Strg": "dbg: TxQ FULL, skipping packet...\\n"
+	},
 	"5297": {
 		"Type": "trice",
 		"Strg": "dbg: HTTPS Activating PDP Ctx\\n"
@@ -126,6 +154,10 @@
 	"5439": {
 		"Type": "trice32",
 		"Strg": "dbg: Echo Failed, %d\\n"
+	},
+	"5813": {
+		"Type": "trice32",
+		"Strg": "dbg: diag: APP-MGR stack rem = %d \\n"
 	},
 	"5843": {
 		"Type": "trice",
@@ -139,6 +171,10 @@
 		"Type": "trice",
 		"Strg": "err: Data Reg Timeout\\n"
 	},
+	"5958": {
+		"Type": "trice32",
+		"Strg": "dbg: Failed to send data to Q\\n, %d"
+	},
 	"6093": {
 		"Type": "trice32",
 		"Strg": "dbg: Sync Failed, %d"
@@ -147,9 +183,21 @@
 		"Type": "trice",
 		"Strg": "dbg: NW State RESET\\n"
 	},
+	"6377": {
+		"Type": "TRICE_S",
+		"Strg": "dbg: Pub Data: %s\\n"
+	},
 	"6600": {
 		"Type": "trice32",
 		"Strg": "err: SSL Certs Upload Failed, %d\\n"
+	},
+	"6722": {
+		"Type": "trice",
+		"Strg": "dbg: Failed to create AppMgr task\\n"
+	},
+	"6916": {
+		"Type": "trice",
+		"Strg": "dbg: Upload Event\\n"
 	},
 	"7071": {
 		"Type": "trice32",

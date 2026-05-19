@@ -4,6 +4,7 @@
 #include "task.h"
 #include "config/appconfig.h"
 #include <string.h>
+#include "utils/trice/trice.h"
 
 static httpsAgentConfig_t *httpsConfig = NULL;
 
@@ -151,33 +152,41 @@ int8_t HTTPSSendData(char *msg, int32_t timeoutMs)
     httpsDataPkt_t *newMsg = NULL;
 
     retVal = APP_ERR_NO_MEM;
-    newMsg = pvPortMalloc(sizeof(httpsDataPkt_t));
-    if(newMsg == NULL)
-    {
-        return retVal;
-    }
 
-    newMsg->dataPtr = pvPortMalloc(sizeof(uint8_t) * (msgLen + 1));
-    if(newMsg->dataPtr == NULL)
+    if(HTTPSGetTxQFreeSlots() > 0)
     {
-        vPortFree(newMsg);
-        return retVal;
-    }
+    	newMsg = pvPortMalloc(sizeof(httpsDataPkt_t));
+		if(newMsg == NULL)
+		{
+			return retVal;
+		}
 
-    memcpy(newMsg->dataPtr, msg, msgLen);
-    newMsg->dataPtr[msgLen] = '\0';
-    newMsg->dataLen = msgLen;
-    newMsg->pktType = HTTPS_TX_PKT;
+		newMsg->dataPtr = pvPortMalloc(sizeof(uint8_t) * (msgLen + 1));
+		if(newMsg->dataPtr == NULL)
+		{
+			vPortFree(newMsg);
+			return retVal;
+		}
 
-    if(HTTPSWriteToTxQ(newMsg, pdMS_TO_TICKS(timeoutMs)) == APP_ERR_NONE)
-    {
-        retVal = APP_ERR_NONE;
+		memcpy(newMsg->dataPtr, msg, msgLen);
+		newMsg->dataPtr[msgLen] = '\0';
+		newMsg->dataLen = msgLen;
+		newMsg->pktType = HTTPS_TX_PKT;
+
+		if(HTTPSWriteToTxQ(newMsg, pdMS_TO_TICKS(timeoutMs)) == APP_ERR_NONE)
+		{
+			retVal = APP_ERR_NONE;
+		}
+		else
+		{
+			vPortFree(newMsg->dataPtr);
+			vPortFree(newMsg);
+			retVal = APP_ERR_NO_MEM;
+		}
     }
     else
     {
-        vPortFree(newMsg->dataPtr);
-        vPortFree(newMsg);
-        retVal = APP_ERR_NO_MEM;
+    	trice(iD(5060), "dbg: TxQ FULL, skipping packet...\n");
     }
 
     return retVal;

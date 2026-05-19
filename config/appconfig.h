@@ -29,6 +29,9 @@
 #define STACK_DTE_UART				(512)
 #define PRIORITY_DTE_UART			(tskIDLE_PRIORITY + 5)
 
+#define STACK_APPMGR				(256)
+#define PRIORITY_APPMGR				(tskIDLE_PRIORITY + 3)
+
 /* HTTPS configurations */
 #define HTTP_METHOD_GET             0
 #define HTTP_METHOD_POST            1
