@@ -20,25 +20,39 @@
 #define STACK_TESTSUITE				(1024)
 #define PRIORITY_TESTSUITE			(tskIDLE_PRIORITY + 1)
 
-#define DIAG_SVC_STACK_SIZE			(512)
+#define DIAG_SVC_STACK_SIZE			(256)
 #define DIAG_SVC_PRIORITY			(tskIDLE_PRIORITY + 1)
 
-#define MODEM_HTTP_STACK_SIZE		(512)
+#define MODEM_HTTP_STACK_SIZE		(448)
 #define MODEM_HTTP_PRIORITY			(tskIDLE_PRIORITY + 5)
 
-#define STACK_DTE_UART				(512)
+#define STACK_DTE_UART				(384)
 #define PRIORITY_DTE_UART			(tskIDLE_PRIORITY + 5)
 
 #define STACK_APPMGR				(256)
 #define PRIORITY_APPMGR				(tskIDLE_PRIORITY + 3)
 
-/* HTTPS configurations */
-#define HTTP_METHOD_GET             0
-#define HTTP_METHOD_POST            1
+/* HTTP Content Types as per AT_HTTPS application note */
+typedef enum {
+    HTTP_CONTENT_APPLICATION_X_WWW_FORM_URLENCODED = 0,
+    HTTP_CONTENT_PLAIN_TEXT = 1,
+    HTTP_CONTENT_APPLICATION_OCTET_STREAM = 2,
+    HTTP_CONTENT_MULTIPART_FORM_DATA = 3,
+    HTTP_CONTENT_APPLICATION_JSON = 4
+} httpContentType_t;
+
+//#define APP_HTTPS_CONTENT_TYPE      HTTP_CONTENT_APPLICATION_X_WWW_FORM_URLENCODED
+#define APP_HTTPS_CONTENT_TYPE    HTTP_CONTENT_APPLICATION_JSON
 
 #define APP_TS_HTTPS_CHANNEL_ID     3373681
 #define HTTP_METHOD_USE             HTTP_METHOD_POST
+
+#if (APP_HTTPS_CONTENT_TYPE == HTTP_CONTENT_APPLICATION_JSON)
 #define APP_HTTPS_URL               "https://api.thingspeak.com/update.json"
+#else
+#define APP_HTTPS_URL               "https://api.thingspeak.com/update"
+#endif
+
 #define APP_HTTPS_WRITE_API_KEY     "LCSF5OF3SCQZOP6U"
 #define APP_HTTPS_READ_API_KEY      "HYZJX14GWRIRBF4I"
 #define HTTP_RX_QUEUE_SIZE          10

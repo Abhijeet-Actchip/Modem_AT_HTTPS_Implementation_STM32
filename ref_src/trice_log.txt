@@ -1,65 +1,447 @@
-May 19 12:31:54.627594  COM5:        https_at_mgr.c   148               PDP Ctx Config Success
-May 19 12:31:55.827028  COM5:        https_at_mgr.c   167               NW Registered, status 1
-May 19 12:31:57.028594  COM5:        https_at_mgr.c   189               Data Registered, status 1
-May 19 12:31:57.028594  COM5:        https_at_mgr.c   269               HTTPS Activating PDP Ctx
-May 19 12:31:57.028594  COM5:        https_at_mgr.c   273               PDP Ctx Activated
-May 19 12:31:57.028594  COM5:        https_at_mgr.c   338               Configuring HTTP
-May 19 12:31:57.434085  COM5:        https_at_mgr.c   355               Set URL success,
-May 19 12:31:57.434085  COM5:        https_at_mgr.c   356               URL: https://api.thingspeak.com/update.json
-May 19 12:31:57.434085  COM5:        https_at_mgr.c   359               HTTPS Manager IDLE
-May 19 12:31:57.434591  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:31:57.434591  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:31:59.036518  COM5:              appmgr.c    61               Upload Event
-May 19 12:31:59.036518  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
-May 19 12:31:59.037530  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=34.01&field2=84.39
-May 19 12:31:59.037530  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 920
-May 19 12:31:59.037530  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
-May 19 12:31:59.037530  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
-May 19 12:31:59.037530  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
-May 19 12:31:59.037530  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
-May 19 12:32:00.228197  COM5:        https_at_mgr.c   245               Request Success, reading response...
-May 19 12:32:00.228670  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:32:00.228670  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:01.428373  COM5:        https_at_mgr.c   245               Request Success, reading response...
-May 19 12:32:01.428373  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:32:01.428373  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:01.630706  COM5:        https_at_mgr.c   251               HTTP Request Failed, -18
-May 19 12:32:01.630706  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:32:01.630706  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:01.630706  COM5:        https_at_mgr.c   251               HTTP Request Failed, -18
-May 19 12:32:01.630706  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:32:01.631211  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:01.827881  COM5:        https_at_mgr.c   251               HTTP Request Failed, -18
-May 19 12:32:04.038072  COM5:              appmgr.c    61               Upload Event
-May 19 12:32:04.038072  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
-May 19 12:32:04.038072  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=6.88&field2=40.99
-May 19 12:32:04.038072  COM5:        https_at_mgr.c   223               Processing packet, len 49
-May 19 12:32:04.038583  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:04.038583  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
-May 19 12:32:04.038583  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
-May 19 12:32:04.038583  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
-May 19 12:32:04.038583  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
-May 19 12:32:04.039104  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
-May 19 12:32:06.027145  COM5:        https_at_mgr.c   245               Request Success, reading response...
-May 19 12:32:09.038696  COM5:              appmgr.c    61               Upload Event
-May 19 12:32:09.038696  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
-May 19 12:32:09.038696  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=88.00&field2=31.95
-May 19 12:32:09.038696  COM5:        https_at_mgr.c   223               Processing packet, len 50
-May 19 12:32:09.038696  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:09.038696  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
-May 19 12:32:09.039238  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
-May 19 12:32:09.039238  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
-May 19 12:32:09.039238  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
-May 19 12:32:09.039238  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
-May 19 12:32:10.827749  COM5:        https_at_mgr.c   245               Request Success, reading response...
-May 19 12:32:14.037327  COM5:              appmgr.c    61               Upload Event
-May 19 12:32:14.037327  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
-May 19 12:32:14.037327  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=98.06&field2=8.50
-May 19 12:32:14.037327  COM5:        https_at_mgr.c   223               Processing packet, len 49
-May 19 12:32:14.037327  COM5:        https_at_mgr.c   229               Sending HTTP POST
-May 19 12:32:14.037327  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
-May 19 12:32:14.037327  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
-May 19 12:32:14.037327  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
-May 19 12:32:14.037327  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
-May 19 12:32:14.037327  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
-
+grInit Success
+May 20 13:23:29.790251  COM5:        https_at_mgr.c   378               HttpsMgr
+Task Started
+May 20 13:23:29.790251  COM5:        https_at_mgr.c   427               diag: HT
+TP-AT-MGR stack rem = 1876
+May 20 13:23:29.790251  COM5:              appmgr.c    89               diag: AP
+P-MGR stack rem = 860
+May 20 13:23:29.790251  COM5:            diag_svc.c    53               diag: Di
+ag Mgr stack rem = 1776
+May 20 13:23:29.790251  COM5:            diag_svc.c    55               diag: Tr
+iceSingleMaxWordCount 2
+May 20 13:23:29.790251  COM5:            diag_svc.c    56               diag: Tr
+iceHalfBufferDepthMax 0
+May 20 13:23:41.457544  COM5:        https_at_mgr.c   417               HttpsATM
+grInit Success
+May 20 13:23:41.457544  COM5:        https_at_mgr.c   378               HttpsMgr
+Task Started
+May 20 13:23:41.457544  COM5:        https_at_mgr.c   427               diag: HT
+TP-AT-MGR stack rem = 1876
+May 20 13:23:41.457544  COM5:              appmgr.c    89               diag: AP
+P-MGR stack rem = 860
+May 20 13:23:41.457544  COM5:            diag_svc.c    53               diag: Di
+ag Mgr stack rem = 1776
+May 20 13:23:41.458050  COM5:            diag_svc.c    55               diag: Tr
+iceSingleMaxWordCount 2
+May 20 13:23:41.458050  COM5:            diag_svc.c    56               diag: Tr
+P-MGR stack rem = 4
+May 20 13:23:46.456270  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:23:46.456270  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:23:46.456959  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 128
+May 20 13:23:51.462023  COM5:              appmgr.c    61               Upload Event
+May 20 13:23:51.462989  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:23:51.462989  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=59.15&field2=55.48
+May 20 13:23:51.462989  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 1868
+May 20 13:23:51.462989  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:23:51.463566  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:23:51.463566  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:23:51.463566  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 128
+May 20 13:23:56.462736  COM5:              appmgr.c    61               Upload Event
+May 20 13:23:56.462736  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:23:56.462736  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=37.84&field2=25.77
+May 20 13:23:56.462736  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 1868
+May 20 13:23:56.463531  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:23:56.463531  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:23:56.464120  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:23:56.464120  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
+May 20 13:23:58.853355  COM5:        https_at_mgr.c    76               Power ON logic done.
+May 20 13:23:59.853127  COM5:        https_at_mgr.c   121               Sync Success
+May 20 13:24:00.052923  COM5:        https_at_mgr.c   126               Echo Success
+May 20 13:24:01.462441  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:01.462441  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:01.462441  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=20.74&field2=62.63
+May 20 13:24:01.463081  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 1680
+May 20 13:24:01.463081  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:01.463081  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:01.463081  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:01.463081  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
+May 20 13:24:02.052941  COM5:        https_at_mgr.c   148               PDP Ctx Config Success
+May 20 13:24:04.453166  COM5:        https_at_mgr.c   167               NW Registered, status 1
+May 20 13:24:05.453386  COM5:        https_at_mgr.c   189               Data Registered, status 1
+May 20 13:24:05.453386  COM5:        https_at_mgr.c   269               HTTPS Activating PDP Ctx
+May 20 13:24:05.652987  COM5:        https_at_mgr.c   273               PDP Ctx Activated
+May 20 13:24:05.652987  COM5:        https_at_mgr.c   338               Configuring HTTP
+May 20 13:24:06.058984  COM5:        https_at_mgr.c   355               Set URL success,
+May 20 13:24:06.058984  COM5:        https_at_mgr.c   356               URL: https://api.thingspeak.com/update.json
+May 20 13:24:06.058984  COM5:        https_at_mgr.c   359               HTTPS Manager IDLE
+May 20 13:24:06.059492  COM5:        https_at_mgr.c   223               Processing packet, len 50
+May 20 13:24:06.059492  COM5:        https_at_mgr.c   229               Sending HTTP POST
+May 20 13:24:06.462805  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:06.462805  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:06.462805  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=34.01&field2=84.39
+May 20 13:24:06.463562  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 920
+May 20 13:24:06.463562  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:06.464169  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:06.464169  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:06.464169  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
+May 20 13:24:11.462815  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:11.462815  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:11.462815  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=6.88&field2=40.99
+May 20 13:24:11.462815  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 920
+May 20 13:24:11.463478  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:11.463478  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:11.463478  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:11.463478  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 168
+May 20 13:24:11.463478  COM5:        https_at_mgr.c   245               Request Success, reading response...
+May 20 13:24:11.654096  COM5:        https_at_mgr.c   223               Processing packet, len 50
+May 20 13:24:11.654096  COM5:        https_at_mgr.c   229               Sending HTTP POST
+May 20 13:24:16.461971  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:16.462594  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:16.462594  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=88.00&field2=31.95
+May 20 13:24:16.462594  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:16.462594  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:16.463726  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:16.463726  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:16.463726  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:21.462294  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:21.462294  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:21.462294  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=98.06&field2=8.50
+May 20 13:24:21.462294  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:21.462850  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:21.462850  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:21.463372  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:21.463372  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:26.462056  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:26.462056  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:26.462056  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=90.76&field2=10.25
+May 20 13:24:26.462585  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:26.462585  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:26.462585  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:26.463175  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:26.463175  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:31.462226  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:31.462226  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:31.462226  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=92.20&field2=50.76
+May 20 13:24:31.462226  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:31.462226  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:31.462909  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:31.462909  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:31.462909  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:36.461594  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:36.462237  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:36.462237  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=87.23&field2=33.33
+May 20 13:24:36.462237  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:36.462237  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:36.462743  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:36.462743  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:36.462743  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:41.462079  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:41.462079  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:41.462079  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=69.24&field2=55.69
+May 20 13:24:41.462704  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:41.462704  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:41.462704  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:41.462704  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:41.462704  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:46.463091  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:46.463091  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:46.463091  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=36.19&field2=3.20
+May 20 13:24:46.463091  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:24:46.463091  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:24:46.463091  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:46.463889  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:46.463889  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:46.463889  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:46.463889  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 172
+May 20 13:24:51.463075  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:51.463075  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:51.463075  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=85.85&field2=9.90
+May 20 13:24:51.463075  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:24:51.463586  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:24:51.463586  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:51.464162  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:51.464162  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:51.464751  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:51.464751  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:24:56.462967  COM5:              appmgr.c    61               Upload Event
+May 20 13:24:56.462967  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:24:56.462967  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=87.71&field2=44.93
+May 20 13:24:56.462967  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:24:56.463561  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:24:56.463561  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:24:56.463561  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:24:56.463561  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:24:56.464104  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:24:56.464104  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:01.462968  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:01.462968  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:01.462968  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=43.22&field2=60.63
+May 20 13:25:01.462968  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:01.463694  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:01.463694  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:01.464347  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:01.464347  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:01.464347  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:01.464347  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:06.462663  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:06.462663  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:06.463280  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=92.78&field2=66.43
+May 20 13:25:06.463280  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:06.463280  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:06.463280  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:06.463280  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:06.463856  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:06.463856  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:06.464386  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:11.462485  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:11.463103  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:11.463103  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=39.54&field2=43.85
+May 20 13:25:11.463103  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:11.463103  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:11.463103  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:11.463675  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:11.463675  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:11.463675  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:11.463675  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:16.462547  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:16.462547  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:16.463167  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=65.21&field2=92.89
+May 20 13:25:16.463167  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:16.463167  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:16.463167  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:16.463787  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:16.463787  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:16.463787  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:16.464386  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:21.462905  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:21.462905  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:21.462905  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=94.91&field2=30.73
+May 20 13:25:21.462905  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:21.463541  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:21.463541  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:21.463541  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:21.464106  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:21.464106  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:21.464106  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:26.462729  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:26.462729  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:26.462729  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=59.65&field2=78.31
+May 20 13:25:26.462729  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:26.463286  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:26.463286  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:26.463286  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:26.463286  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:26.463837  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:26.463837  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:31.462352  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:31.462352  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:31.462352  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=33.80&field2=80.53
+May 20 13:25:31.462933  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:31.462933  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:31.462933  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:31.462933  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:31.462933  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:31.463461  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:31.463461  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:31.653023  COM5:        https_at_mgr.c   251               HTTP Request Failed, -7
+May 20 13:25:31.653023  COM5:        https_at_mgr.c   223               Processing packet, len 50
+May 20 13:25:31.653023  COM5:        https_at_mgr.c   229               Sending HTTP POST
+May 20 13:25:36.461396  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:36.461396  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:36.461396  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=94.22&field2=6.65
+May 20 13:25:36.461396  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:36.461396  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:36.462137  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:36.462137  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:36.462709  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:41.462450  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:41.462450  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:41.462450  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=85.71&field2=97.72
+May 20 13:25:41.462450  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:41.462450  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:41.462450  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:41.463203  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:41.463203  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:41.463203  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:41.463203  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:46.462508  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:46.462508  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:46.462508  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=88.96&field2=54.53
+May 20 13:25:46.462508  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:46.463113  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:46.463113  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:46.463113  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:46.463113  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:46.463648  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:46.463648  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:51.462582  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:51.462582  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:51.462582  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=86.44&field2=45.78
+May 20 13:25:51.462582  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:51.463089  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:51.463089  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:51.463089  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:51.463636  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:51.463636  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:51.463636  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:25:56.462466  COM5:              appmgr.c    61               Upload Event
+May 20 13:25:56.462466  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:25:56.462466  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=80.02&field2=87.37
+May 20 13:25:56.462466  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:25:56.462466  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:25:56.462466  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:25:56.462975  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:25:56.462975  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:25:56.463544  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:25:56.463544  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:01.462373  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:01.462373  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:01.462373  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=82.18&field2=18.57
+May 20 13:26:01.462373  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:01.462969  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:01.462969  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:01.462969  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:01.463523  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:01.463523  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:01.463523  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:06.461662  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:06.462238  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:06.462238  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=8.63&field2=63.82
+May 20 13:26:06.462238  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:06.462238  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:06.462238  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:06.462745  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:06.462745  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:06.463286  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:06.463286  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:11.556795  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:11.556795  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:11.557305  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=23.38&field2=46.27
+May 20 13:26:11.557305  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:11.557305  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:11.557305  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:11.557305  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:11.557824  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:11.557824  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:11.557824  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:16.462139  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:16.462139  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:16.462139  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=0.74&field2=63.50
+May 20 13:26:16.462651  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:16.462651  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:16.462651  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:16.463236  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:16.463236  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:16.463761  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:16.464297  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:21.461412  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:21.462090  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:21.462090  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=42.13&field2=95.37
+May 20 13:26:21.462090  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:21.462090  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:21.462090  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:21.462090  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:21.462654  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:21.462654  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:21.462654  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:26.461873  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:26.461873  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:26.461873  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=21.01&field2=97.08
+May 20 13:26:26.461873  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:26.461873  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:26.461873  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:26.462517  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:26.462517  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:26.463112  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:26.463112  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:31.462120  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:31.462120  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:31.462120  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=26.13&field2=85.71
+May 20 13:26:31.462120  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:31.462120  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:31.462120  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:31.462872  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:31.462872  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:31.462872  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:31.462872  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:36.459411  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:36.459411  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:36.459411  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=58.13&field2=70.73
+May 20 13:26:36.459411  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:36.459917  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:36.459917  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:36.459917  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:36.652772  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:36.652772  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:36.653281  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:41.457891  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:41.457891  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:41.457891  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=28.60&field2=31.82
+May 20 13:26:41.457891  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:41.457891  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:41.457891  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:41.653518  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:41.653518  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:41.653518  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:41.653518  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:46.458627  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:46.458627  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:46.458627  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=64.40&field2=85.85
+May 20 13:26:46.458627  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:46.458627  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:46.458627  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:46.654338  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:46.654338  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:46.655014  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:46.655690  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:51.458344  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:51.458344  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:51.458344  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=66.89&field2=44.31
+May 20 13:26:51.459091  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:26:51.459091  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:26:51.459091  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:51.654362  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:51.654362  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:51.654362  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:51.655053  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:26:51.851746  COM5:        https_at_mgr.c   251               HTTP Request Failed, -7
+May 20 13:26:51.852123  COM5:        https_at_mgr.c   223               Processing packet, len 50
+May 20 13:26:51.852123  COM5:        https_at_mgr.c   229               Sending HTTP POST
+May 20 13:26:56.455453  COM5:              appmgr.c    61               Upload Event
+May 20 13:26:56.455453  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:26:56.456173  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=5.59&field2=77.75
+May 20 13:26:56.653577  COM5:        https_at_mgr.c   427               diag: HTTP-AT-MGR stack rem = 728
+May 20 13:26:56.653577  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:26:56.653577  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:26:56.654084  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:26:56.654084  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:27:01.458541  COM5:              appmgr.c    61               Upload Event
+May 20 13:27:01.458541  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:27:01.458541  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=59.47&field2=10.21
+May 20 13:27:01.458541  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:27:01.459226  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:27:01.459226  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:27:01.653543  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:27:01.654273  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:27:01.654273  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:27:01.654273  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:27:06.457485  COM5:              appmgr.c    61               Upload Event
+May 20 13:27:06.457485  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:27:06.457485  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=29.96&field2=95.07
+May 20 13:27:06.457485  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:27:06.457485  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:27:06.457485  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:27:06.653512  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:27:06.653512  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:27:06.654026  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:27:06.654026  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:27:11.457274  COM5:              appmgr.c    61               Upload Event
+May 20 13:27:11.457682  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:27:11.457682  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=66.57&field2=94.77
+May 20 13:27:11.457682  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:27:11.458187  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:27:11.458187  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:27:11.653209  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:27:11.653209  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:27:11.653209  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:27:11.653209  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180
+May 20 13:27:16.457334  COM5:              appmgr.c    61               Upload Event
+May 20 13:27:16.457334  COM5:              appmgr.c    32               Publishing data to HTTPS Q...
+May 20 13:27:16.457334  COM5:              appmgr.c    33               Pub Data: api_key=LCSF5OF3SCQZOP6U&field1=87.94&field2=70.09
+May 20 13:27:16.457946  COM5:        https_common.c   189               TxQ FULL, skipping packet...
+May 20 13:27:16.457946  COM5:              appmgr.c    37               Failed to send data to Q
+May 20 13:27:16.457946  COM5: , -9 diag: HTTP-AT-MGR stack rem = 728
+May 20 13:27:16.653375  COM5:              appmgr.c    89               diag: APP-MGR stack rem = 4
+May 20 13:27:16.653375  COM5:            diag_svc.c    53               diag: Diag Mgr stack rem = 1776
+May 20 13:27:16.653375  COM5:            diag_svc.c    55               diag: TriceSingleMaxWordCount 14
+May 20 13:27:16.654066  COM5:            diag_svc.c    56               diag: TriceHalfBufferDepthMax 180

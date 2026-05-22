@@ -7,14 +7,6 @@
 #include "config/appconfig.h"
 
 
-/* HTTP Content Types as per AT_HTTPS application note */
-typedef enum {
-    HTTP_CONTENT_APPLICATION_X_WWW_FORM_URLENCODED = 0,
-    HTTP_CONTENT_PLAIN_TEXT = 1,
-    HTTP_CONTENT_APPLICATION_OCTET_STREAM = 2,
-    HTTP_CONTENT_MULTIPART_FORM_DATA = 3,
-    HTTP_CONTENT_APPLICATION_JSON = 4
-} httpContentType_t;
 
 
 typedef struct _httpsAgentConfig_t {

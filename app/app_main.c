@@ -22,7 +22,7 @@ void SetupHTTPConfig(httpsAgentConfig_t *var)
 	var->nwReadyBit = 0;
 
 	strncpy(var->baseUrl, APP_HTTPS_URL, sizeof(var->baseUrl) - 1);
-	var->contentType = HTTP_CONTENT_APPLICATION_X_WWW_FORM_URLENCODED;
+	var->contentType = APP_HTTPS_CONTENT_TYPE;
 	strncpy(var->readApiKey, APP_HTTPS_READ_API_KEY, sizeof(var->readApiKey) - 1);
 	strncpy(var->writeApiKey, APP_HTTPS_WRITE_API_KEY, sizeof(var->writeApiKey) - 1);
 	var->useTLS = APP_USE_TLS;
@@ -33,7 +33,7 @@ void SetupHTTPConfig(httpsAgentConfig_t *var)
 int main(void)
 {
 	int8_t retVal;
-	httpsAgentConfig_t httpCfg = {0};
+	static httpsAgentConfig_t httpCfg = {0};
 
 	retVal = Board_InitPeripherals();
 	APP_ASSERT(retVal == APP_ERR_NONE);

@@ -1,30 +1,30 @@
 
 
-OpenDocument="appmgr.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/appmgr.c", Line=0
+
+OpenDocument="app_main.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/app_main.c", Line=6
 OpenDocument="modem_dte.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/modem_mgr/modem_dte.c", Line=181
 OpenDocument="modem_dce.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/modem_mgr/modem_dce.c", Line=296
-OpenDocument="board_v1_0_it.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/bsp/board_v1_0_it.c", Line=128
+OpenDocument="board_v1_0_it.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/bsp/board_v1_0_it.c", Line=70
 OpenDocument="tasks.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/Middlewares/Third_Party/FreeRTOS/Source/tasks.c", Line=3565
-OpenDocument="https_at_mgr.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/https_at_mgr.c", Line=380
+OpenDocument="https_at_mgr.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/https_at_mgr.c", Line=250
 OpenDocument="https_common.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/https_common.c", Line=13
 OpenDocument="triceUart.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/utils/trice/triceUart.c", Line=43
 OpenDocument="trice.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/utils/trice/trice.c", Line=844
 OpenDocument="triceDoubleBuffer.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/utils/trice/triceDoubleBuffer.c", Line=98
-OpenDocument="app_main.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/app_main.c", Line=25
+OpenDocument="appmgr.c", FilePath="D:/STMWorkspace_1.18.1/Test_Modem_AT_HTTPs/app/appmgr.c", Line=0
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=0, w=300, h=520, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=421, h=291, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=421, h=228, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
 OpenWindow="Memory 1", DockArea=BOTTOM, x=1, y=0, w=963, h=398, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x0
-OpenWindow="Watched Data 1", DockArea=LEFT, x=0, y=0, w=300, h=315, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
-OpenWindow="Functions", DockArea=LEFT, x=0, y=1, w=300, h=204, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=300, h=520, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=956, h=398, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 SmartViewPlugin="", Page="", Toolbar="Hidden", Window="SmartView 1"
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Source"], ColWidths=[1435;100;100;100;245]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[163;126;154;100;134;100]
 TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
 TableHeader="Task List", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Name";"Run Count";"Priority";"Status";"Timeout";"Stack Info";"ID";"Mutex Count";"Notified Value";"Notify State"], ColWidths=[110;110;110;110;110;110;110;110;110;110]
-TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;118;259]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;118;182]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
-TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;37]
-TableHeader="Watched Data 1", SortCol="Expression", SortOrder="ASCENDING", VisibleCols=["Expression";"Value";"Location";"Refresh"], ColWidths=[100;100;110;100]
 WatchedExpression="retVal", Window=Watched Data 1
 WatchedExpression="delayCtr", RefreshRate=5, Window=Watched Data 1
 WatchedExpression="nwState", RefreshRate=5, Window=Watched Data 1

@@ -59,6 +59,10 @@
 		"Type": "trice",
 		"Strg": "dbg: MODEM Reset logic done.\\n"
 	},
+	"2535": {
+		"Type": "trice",
+		"Strg": "dbg: Packet Rx from Q\\n"
+	},
 	"2689": {
 		"Type": "trice",
 		"Strg": "dbg: Uploading SSL Certs\\n"
@@ -78,6 +82,10 @@
 	"3010": {
 		"Type": "trice32",
 		"Strg": "dbg: diag: HTTP-AT-MGR stack rem = %d \\n"
+	},
+	"3127": {
+		"Type": "trice32",
+		"Strg": "dbg: Set Content Type: %d\\n"
 	},
 	"3264": {
 		"Type": "TRICE_S",
@@ -106,6 +114,10 @@
 	"4262": {
 		"Type": "trice",
 		"Strg": "dbg: Sync Success\\n"
+	},
+	"4268": {
+		"Type": "trice32",
+		"Strg": "err: HTTP Read Failed, %d\\n"
 	},
 	"4355": {
 		"Type": "trice",
@@ -139,6 +151,10 @@
 		"Type": "trice",
 		"Strg": "dbg: Request Success, reading response...\\n"
 	},
+	"5004": {
+		"Type": "trice",
+		"Strg": "dbg: Upload success\\n"
+	},
 	"5060": {
 		"Type": "trice",
 		"Strg": "dbg: TxQ FULL, skipping packet...\\n"
@@ -151,9 +167,21 @@
 		"Type": "trice",
 		"Strg": "dbg: HTTPS Manager IDLE\\n"
 	},
+	"5403": {
+		"Type": "TRICE_S",
+		"Strg": "%s\\n"
+	},
 	"5439": {
 		"Type": "trice32",
 		"Strg": "dbg: Echo Failed, %d\\n"
+	},
+	"5564": {
+		"Type": "trice32",
+		"Strg": "err: Failed uploading cert, %d\\n"
+	},
+	"5775": {
+		"Type": "trice",
+		"Strg": "dbg: Uploading certificate\\n"
 	},
 	"5813": {
 		"Type": "trice32",
