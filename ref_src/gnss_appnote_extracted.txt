@@ -1,0 +1,2758 @@
+EC200U Series&EG912U-GL 
+GNSS Application Note   
+
+  LTE Standard Module Series 
+
+  Version: 1.2 
+
+  Date: 2024-01-09 
+
+  Status: Released 
+
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+At  Quectel,  our  aim  is  to  provide  timely  and  comprehensive  services  to  our  customers.  If  you 
+require any assistance, please contact our headquarters: 
+
+Quectel Wireless Solutions Co., Ltd.   
+Building 5, Shanghai Business Park Phase III (Area B), No.1016 Tianlin Road, Minhang District, Shanghai 
+200233, China   
+Tel: +86 21 5108 6236   
+Email: info@quectel.com 
+
+Or our local offices. For more information, please visit:   
+http://www.quectel.com/support/sales.htm. 
+
+For technical support, or to report documentation errors, please visit:   
+http://www.quectel.com/support/technical.htm. 
+Or email us at: support@quectel.com. 
+
+Legal Notices 
+We offer information as a service to you. The provided information is based on your requirements and we 
+make every effort to ensure its quality. You agree that you are responsible for using independent analysis 
+and evaluation in designing intended products, and we provide reference designs for illustrative purposes 
+only. Before using any hardware, software or service guided by this document, please read this notice 
+carefully. Even though we employ commercially reasonable efforts to provide the best possible experience, 
+you hereby acknowledge and agree that this document and related services hereunder are provided to 
+you  on  an  “as  available”  basis. We  may  revise  or  restate  this  document  from  time  to  time  at  our  sole 
+discretion without any prior notice to you. 
+
+Use and Disclosure Restrictions 
+
+License Agreements 
+
+Documents and information provided by us shall be kept confidential, unless specific permission is granted. 
+They shall not be accessed or used for any purpose except as expressly provided herein. 
+
+Copyright 
+
+Our and third-party products hereunder may contain copyrighted material. Such copyrighted material shall 
+not  be  copied,  reproduced,  distributed,  merged,  published,  translated,  or  modified  without  prior  written 
+consent.  We  and  the  third  party  have  exclusive  rights  over  copyrighted  material.  No  license  shall  be 
+granted  or  conveyed  under  any  patents,  copyrights,  trademarks,  or  service  mark  rights.  To  avoid 
+ambiguities, purchasing in any form cannot be deemed as granting a license other than the normal non-
+exclusive,  royalty-free  license  to  use  the  material.  We  reserve  the  right  to  take  legal  action  for 
+noncompliance with abovementioned requirements, unauthorized use, or other illegal or malicious use of 
+the material. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  1  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Trademarks 
+
+Except as otherwise set forth herein, nothing in this document shall be construed as conferring any rights 
+to use any trademark, trade name or name, abbreviation, or counterfeit product thereof owned by Quectel 
+or any third party in advertising, publicity, or other aspects. 
+
+Third-Party Rights 
+
+This document may refer to hardware, software and/or documentation owned by one or more third parties 
+(“third-party  materials”).  Use  of  such  third-party  materials  shall  be  governed  by  all  restrictions  and 
+obligations applicable thereto. 
+
+We  make  no  warranty  or  representation,  either  express  or  implied,  regarding  the  third-party  materials, 
+including but not limited to any implied or statutory, warranties of merchantability or fitness for a particular 
+purpose,  quiet  enjoyment,  system  integration,  information accuracy,  and  non-infringement  of  any  third-
+party  intellectual  property  rights  with  regard  to  the  licensed  technology  or  use  thereof.  Nothing  herein 
+constitutes a representation or warranty by us to either develop, enhance, modify, distribute, market, sell, 
+offer for sale, or otherwise maintain production of any our products or any other hardware, software, device, 
+tool,  information,  or  product.  We  moreover  disclaim  any  and  all  warranties  arising  from  the  course  of 
+dealing or usage of trade. 
+
+Privacy Policy 
+To implement module functionality, certain device data are uploaded to Quectel’s or third-party’s servers, 
+including  carriers,  chipset  suppliers  or  customer-designated  servers.  Quectel,  strictly  abiding  by  the 
+relevant laws and regulations, shall retain, use, disclose or otherwise process relevant data for the purpose 
+of performing the service only or as permitted by applicable laws. Before data interaction with third parties, 
+please be informed of their privacy and data security policy. 
+
+Disclaimer   
+a)  We acknowledge no liability for any injury or damage arising from the reliance upon the information. 
+b)  We  shall  bear  no  liability  resulting  from  any  inaccuracies  or  omissions,  or  from  the  use  of  the 
+
+information contained herein.   
+
+c)  While we have made every effort to ensure that the functions and features under development are 
+free  from  errors,  it  is  possible  that  they  could  contain  errors,  inaccuracies,  and  omissions.  Unless 
+otherwise provided by valid agreement, we make no warranties of any kind, either implied or express, 
+and exclude all liability for any loss or damage suffered in connection with the use of features and 
+functions under development, to the maximum extent permitted by law, regardless of whether such 
+loss or damage may have been foreseeable. 
+
+d)  We are not responsible for the accessibility, safety, accuracy, availability, legality, or completeness of 
+information, advertising, commercial offers, products, services, and materials on third-party websites 
+and third-party resources. 
+
+Copyright © Quectel Wireless Solutions Co., Ltd. 2024. All rights reserved. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  2  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+About the Document 
+
+Revision History   
+
+Version 
+
+Date 
+
+Author 
+
+Description 
+
+- 
+
+1.0 
+
+2020-12-17 
+
+Lambert ZHAO 
+
+Creation of the document 
+
+2021-05-13 
+
+Lambert ZHAO 
+
+First official release 
+
+1.  Deleted  applicable  modules  EC600U  series, 
+EG500U-CN  and  EG700U-CN,  and  added 
+EC200U-AU and EG912U-GL. 
+
+2.  Added the maximum response time for each AT 
+
+command. 
+
+3.  Updated the prefixes of BDS NMEA sentences 
+
+(Chapter 1.3). 
+
+4.  Updated 
+
+the  NMEA 
+
+sentence 
+
+types 
+
+corresponding to the values and default value for       
+<BeiDou_NMEA_type> 
+AT+QGPSCFG="beidounmeatype" 
+2.3.1.6). 
+
+in 
+(Chapter 
+
+5.  Updated  the  supported  GNSS  constellations 
+
+(Chapter 2.3.1.8). 
+
+6.  Added 
+
+AT+QGPSCFG="beidounmeaformat" 
+
+(Chapter 2.3.1.10). 
+
+7.  Added  AT+QGPSCFG="apflash" 
+
+(Chapter 
+
+2.3.1.11). 
+
+8.  Updated AT+QAGPSCFG  to  configure  IP  type 
+
+and APN (Chapter 2.3.8). 
+
+Added the note that preset files in the file system 
+cannot be deleted at will (Chapter 1). 
+
+1.1 
+
+2022-08-23 
+
+Tyler LI 
+
+1.2 
+
+2024-01-09 
+
+Reilly NIAN 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  3  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+   
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Contents 
+
+About the Document .................................................................................................................................. 3 
+Contents ...................................................................................................................................................... 4 
+Table Index .................................................................................................................................................. 6 
+
+1 
+
+Introduction ......................................................................................................................................... 7 
+1.1.  Applicable Modules .................................................................................................................... 7 
+1.2.  GNSS Turning on/off Procedures .............................................................................................. 8 
+1.3.  Supported NMEA Sentence Types ............................................................................................ 8 
+
+2.3.1.5. 
+
+2.3.1.4. 
+
+2.3.1.3. 
+
+2.3.1.1. 
+2.3.1.2. 
+
+2  Description of GNSS AT Commands .............................................................................................. 10 
+2.1.  AT Command Introduction ....................................................................................................... 10 
+2.1.1.  Definitions ...................................................................................................................... 10 
+2.1.2.  AT Command Syntax .................................................................................................... 10 
+2.2.  Declaration of AT Command Examples .................................................................................... 11 
+2.3.  AT Command Description ......................................................................................................... 11 
+2.3.1.  AT+QGPSCFG Configure GNSS ................................................................................... 11 
+AT+QGPSCFG="outport"    Configure Output Port of NMEA Sentences .......... 12 
+AT+QGPSCFG="nmeasrc"    Enable/Disable Acquisition of NMEA Sentences via 
+AT+QGPSGNMEA ............................................................................................. 13 
+AT+QGPSCFG="gpsnmeatype" 
+  Configure  Output  Type  of  GPS  NMEA 
+Sentences .......................................................................................................... 14 
+AT+QGPSCFG="glonassnmeatype"    Configure  Output  Type  of  GLONASS 
+NMEA Sentences ............................................................................................... 15 
+AT+QGPSCFG="galileonmeatype"    Configure  Output  Type  of  Galileo  NMEA 
+Sentences .......................................................................................................... 16 
+AT+QGPSCFG="beidounmeatype"    Configure  Output  Type  of  BDS  NMEA 
+Sentences .......................................................................................................... 16 
+AT+QGPSCFG="gnssnmeatype"    Configure Output Type of Multi-constellation 
+NMEA sentences ................................................................................................ 17 
+AT+QGPSCFG="gnssconfig"    Configure Supported GNSS Constellations .... 18 
+AT+QGPSCFG="autogps"    Enable/Disable GNSS to Run Automatically ....... 19 
+  Configure  Prefix  of  BDS  NMEA 
+Sentences .......................................................................................................... 20 
+2.3.1.11.  AT+QGPSCFG="apflash"    Enable/Disable AP Flash Quick Hot Start ............. 21 
+2.3.2.  AT+QGPSDEL    Delete Assistance Data ..................................................................... 21 
+2.3.3.  AT+QGPS    Turn on GNSS .......................................................................................... 22 
+2.3.4.  AT+QGPSEND    Turn off GNSS .................................................................................. 24 
+2.3.5.  AT+QGPSLOC    Acquire Positioning Information ........................................................ 24 
+2.3.6.  AT+QGPSGNMEA    Acquire Specified NMEA Sentences ........................................... 27 
+2.3.7.  AT+QAGPS    Enable/Disable AGPS ............................................................................ 28 
+2.3.8.  AT+QAGPSCFG    Configure AGPS ............................................................................. 29 
+2.3.9.  AT+QGPSINFO    Query GNSS Version ....................................................................... 30 
+
+2.3.1.8. 
+2.3.1.9. 
+2.3.1.10.  AT+QGPSCFG="beidounmeaformat" 
+
+2.3.1.6. 
+
+2.3.1.7. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  4  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+3  Examples ........................................................................................................................................... 32 
+3.1.  Turn On/Off the GNSS ............................................................................................................. 32 
+3.2.  Application of <NMEA_src> ..................................................................................................... 32 
+3.3.  GNSS Hibernation Mode ......................................................................................................... 33 
+3.4.  Application of AGPS Feature ................................................................................................... 33 
+
+4  Summary of Error Codes ................................................................................................................. 34 
+
+5  Appendix References ....................................................................................................................... 35 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  5  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+   
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Table Index 
+
+Table 1: Applicable Modules ......................................................................................................................... 7 
+Table 2: Type of AT Commands ................................................................................................................. 10 
+Table 3: Summary of Error Codes .............................................................................................................. 34 
+Table 4: Related Document ........................................................................................................................ 35 
+Table 5: Terms and Abbreviations .............................................................................................................. 35 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  6  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+LTE  Standard  Module  Series 
+
+1  Introduction
+
+Quectel EC200U series and EG912U-GL modules integrate the GNSS engine and support GPS, BDS, 
+Galileo and GLONASS systems for multi-constellation positioning (See Chapter 2.3.1.8), providing a high-
+performance positioning solution that is quick and accurate. With GNSS function, the modules are widely 
+applied in fields such as turn-by-turn navigation, asset tracking, wearable devices, personnel and vehicle 
+tracking. 
+
+1.1. Applicable Modules 
+
+Table 1: Applicable Modules 
+
+Module Series 
+
+Module 
+
+EC200U-AU 
+
+EC200U 
+
+EC200U-CN 
+
+EC200U-EU 
+
+EG912U 
+
+EG912U-GL 
+
+⚫
+
+NOTE 
+
+1. GNSS  function  is  optional  for  EC200U  series  and  EG912U-GL  modules,  and  please  consult
+
+Quectel Technical Support for details.
+
+2. Preset files for functions such as GNSS, Bluetooth and TTS in the file system cannot be deleted
+
+at will.
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note 
+
+7  / 36 
+
+                                                                    LTE  Standard  Module  Series 
+
+1.2. GNSS Turning on/off Procedures   
+
+The module’s GNSS engine supports location calculation without any network assistance. GNSS turning 
+on/off procedures are shown below: 
+
+Step 1: Configure GNSS parameters via AT+QGPSCFG.   
+Step 2: Turn on GNSS via AT+QGPS. 
+Step 3: Obtain the positioning information in either of the following three ways after turning on GNSS and 
+
+fixing position successfully: 
+1)  NMEA sentences are output to USB NMEA port by default and can be obtained by reading 
+
+the port. 
+
+2)  Obtain positioning information such as latitude, longitude, height, GNSS positioning mode, 
+
+time, number of satellites, and so on directly via AT+QGPSLOC. 
+
+3)  Set  AT+QGPSCFG="nmeasrc",1  to  enable  acquisition  of  specified NMEA sentences  via 
+AT+QGPSGNMEA, and set AT+QGPSCFG="nmeasrc",0 to disable acquisition of specified 
+NMEA sentences via AT+QGPSGNMEA. 
+
+Step 4: Turn off GNSS via AT+QGPSEND. 
+
+1.3. Supported NMEA Sentence Types   
+
+The default NMEA sentences of the module are compatible with NMEA 0183 protocol, and five kinds of 
+prefixes are available to differentiate NMEA sentences of different satellite systems, as illustrated below.   
+
+GPS NMEA sentences have the prefix "GP": 
+
+⚫  GPGGA - Global positioning system fix data, such as time and position 
+⚫  GPRMC - Recommended minimum specific GNSS data 
+⚫  GPGSV - GNSS satellites in view, such as number of satellites in view and satellite ID numbers 
+⚫  GPGSA - GNSS DOP and active satellites   
+⚫  GPVTG - Course over ground and ground speed   
+
+BDS  NMEA  sentences  have  the  prefixes  "PQ",  or  "GB",  or  "BD".  You  can  configure  the  prefixes  by 
+AT+QGPSCFG="beidounmeaformat". Taking "PQ" as an example: 
+
+⚫  PQGSV - GNSS satellites in view, such as number of satellites in view and satellite ID numbers 
+⚫  PQGSA - GNSS DOP and active satellites   
+⚫  PQGGA - Global positioning system fix data, such as time and position 
+⚫  PQRMC - Recommended minimum specific GNSS data 
+⚫  PQVTG - Course over ground and ground speed   
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  8  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Multi-constellation NMEA sentences have the prefix "GN": 
+
+⚫  GNGSV - GNSS satellites in view, such as number of satellites in view and satellite ID numbers 
+⚫  GNGGA - Global positioning system fix data, such as time and position 
+⚫  GNRMC - Recommended minimum specific GNSS data 
+⚫  GNVTG - Course over ground and ground speed   
+
+GLONASS NMEA sentence has the prefix "GL": 
+
+⚫  GLGSV - GNSS satellites in view, such as number of satellites in view and satellite ID numbers. 
+
+Galileo NMEA sentence has the prefix "GA": 
+
+⚫  GAGSV - GNSS satellites in view, such as number of satellites in view and satellite ID numbers. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  9  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2  Description of GNSS AT Commands 
+
+2.1. AT Command Introduction 
+
+2.1.1.  Definitions 
+
+⚫  <CR>   
+⚫  <LF>   
+⚫  <...>   
+⚫ 
+[...]   
+
+Carriage return character. 
+Line feed character. 
+Parameter name. Angle brackets do not appear on the command line. 
+Optional  parameter  of  a  command  or  an  optional  part  of  TA  information  response.           
+Square brackets do not appear on the command line. When an optional parameter is                       
+not  given  in  a  command,  the  new  value  equals  to  its  previous  value  or  the  default           
+settings, unless otherwise specified. 
+
+⚫  Underline    Default setting of a parameter. 
+
+2.1.2.  AT Command Syntax 
+
+All command lines must start with AT or at and end with <CR>. Information responses and result codes 
+feed  character: 
+always  start  and  end  with  a  carriage 
+<CR><LF><response><CR><LF>.  In  tables  presenting  commands  and  responses  throughout  this 
+document, only the commands and responses are presented, and <CR> and <LF> are deliberately omitted. 
+
+return  character  and  a 
+
+line 
+
+Table 2: Type of AT Commands 
+
+Command Type 
+
+Syntax 
+
+Description 
+
+Test Command 
+
+AT+<cmd>=? 
+
+Read Command 
+
+AT+<cmd>? 
+
+Test  the  existence  of  the  corresponding 
+command and return information about the 
+type, value, or range of its parameter. 
+
+Check  the  current  parameter  value  of  the 
+corresponding command. 
+
+Write Command 
+
+AT+<cmd>=<p1>[,<p2>[,<p3>[...]]]  Set user-definable parameter value. 
+
+Execution Command  AT+<cmd> 
+
+Return a specific information parameter or 
+perform a specific action. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  10  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.2. Declaration of AT Command Examples 
+
+The AT command examples in this document are provided to help you familiarize with AT commands and 
+learn how to use them. The examples, however, should not be taken as Quectel’s recommendation or 
+suggestions about how to design a program flow or what status to set the module into. Sometimes multiple 
+examples may be provided for one AT command. However, this does not mean that there is a correlation 
+among these examples and that they should be executed in a given sequence.   
+
+2.3. AT Command Description 
+
+2.3.1.  AT+QGPSCFG  Configure GNSS   
+
+This command queries and configures various GNSS settings, including the output port and output types 
+of NMEA sentences. 
+
+AT+QGPSCFG    Configure GNSS   
+
+Test Command 
+AT+QGPSCFG=? 
+
+supported 
+
+supported 
+
+of 
+
+of 
+
+"galileonmeatype",(list 
+
+"glonassnmeatype",(list 
+
+Response 
++QGPSCFG: "outport",(list of supported <out_port>s) 
++QGPSCFG: "nmeasrc",(list of supported <NMEA_src>s) 
+"gpsnmeatype",(list 
++QGPSCFG: 
+<GPS_NMEA_type>s) 
++QGPSCFG: 
+<GLONASS_NMEA_type>s) 
++QGPSCFG: 
+<Galileo_NMEA_type>s) 
++QGPSCFG: 
+<BeiDou_NMEA_type>s)   
++QGPSCFG: 
+<GNSS_NMEA_type>s) 
++QGPSCFG: 
+<GNSS_config>s) 
++QGPSCFG: "autogps",(list of supported <autoGPS>s) 
++QGPSCFG: 
+<BeiDou_NMEA_format>s) 
++QGPSCFG: "apflash",(list of supported <AP_flash_mode>s) 
+
+"beidounmeaformat",(range  of 
+
+"beidounmeatype",(list 
+
+"gnssnmeatype",(list 
+
+"gnssconfig",(list 
+
+of 
+
+of 
+
+of 
+
+of 
+
+supported 
+
+supported 
+
+supported 
+
+supported 
+
+supported 
+
+Maximum Response Time 
+
+Characteristics 
+
+OK 
+
+300 ms 
+
+/ 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  11  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.1.1.  AT+QGPSCFG="outport"    Configure Output Port of NMEA Sentences 
+
+This command configures the output port of NMEA sentences. 
+
+AT+QGPSCFG="outport"    Configure Output Port of NMEA Sentences   
+
+Write Command 
+AT+QGPSCFG="outport"[,<out_port
+>] 
+
+Response 
+If  the  optional  parameter  is  omitted,  query  the  current 
+configuration: 
++QGPSCFG: "outport",<out_port> 
+
+OK 
+
+If the optional parameter is specified, configure the output port 
+of NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<out_port> 
+
+The command takes effect immediately; 
+The configuration is saved automatically. 
+
+String type. Configure the output port of NMEA sentences. 
+"none" 
+
+Close NMEA sentence output 
+
+"uart1" 
+
+"uart2" 
+
+"usbat" 
+
+Output via UART1 port 
+
+Output via UART2 port 
+
+Output via USB AT port 
+
+"usbmodem"  
+"usbnmea" 
+
+Output via USB Modem port 
+Output via USB NMEA port 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  12  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.1.2.  AT+QGPSCFG="nmeasrc"    Enable/Disable Acquisition of NMEA Sentences via 
+
+AT+QGPSGNMEA 
+
+This command enables/disables acquisition of NMEA sentences via AT+QGPSGNMEA. 
+
+AT+QGPSCFG="nmeasrc"    Enable/Disable  Acquisition  of  NMEA  Sentences  via 
+AT+QGPSGNMEA 
+Write Command 
+AT+QGPSCFG="nmeasrc"[,<NMEA_
+src>] 
+
+Response 
+If  the  optional  parameter  is  omitted,  query  the  current 
+configuration: 
++QGPSCFG: "nmeasrc",<NMEA_src> 
+
+OK 
+
+If  the  optional  parameter  is  specified,  configure  whether  to 
+enable acquisition of NMEA sentences via AT+QGPSGNMEA: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<NMEA_src> 
+
+The command takes effect immediately; 
+The configuration is saved automatically. 
+
+Integer type. If enabled, NMEA sentences can be acquired via AT+QGPSGNMEA. 
+Meanwhile, NMEA sentences are output via the AT port as a return value. 
+0  Disable 
+1  Enable 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  13  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.1.3.  AT+QGPSCFG="gpsnmeatype"    Configure Output Type of GPS NMEA Sentences 
+
+This command configures the type of GPS NMEA sentences that will be output. 
+
+AT+QGPSCFG="gpsnmeatype"    Configure Output Type of GPS NMEA Sentences 
+
+Write Command 
+AT+QGPSCFG="gpsnmeatype"[,
+<GPS_NMEA_type>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "gpsnmeatype",<GPS_NMEA_type> 
+
+OK 
+
+If the optional parameter is specified, configure the output type of 
+GPS NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Parameter 
+
+<GPS_NMEA_type> 
+
+Integer type. Output type of GPS NMEA sentences in XOR format.   
+0  Disable 
+1  GPGGA 
+2  GPRMC 
+4  GPGSV 
+8  GPGSA 
+16  GPVTG 
+31  All the five types of sentences 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  14  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.1.4.  AT+QGPSCFG="glonassnmeatype"    Configure Output Type of GLONASS NMEA 
+
+Sentences 
+
+This command configures the type of the GLONASS NMEA sentences that will be output. 
+
+AT+QGPSCFG="glonassnmeatype"    Configure  Output  Type  of  GLONASS  NMEA 
+Sentences 
+Write Command 
+AT+QGPSCFG="glonassnmeatype
+"[,<GLONASS_NMEA_type>] 
+
+Response 
+If 
+configuration: 
++QGPSCFG:  "glonassnmeatype",<GLONASS_NMEA_type> 
+
+the  optional  parameter 
+
+is  omitted,  query 
+
+the  current 
+
+OK   
+
+If the optional parameter is specified, configure the output type of 
+GLONASS NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<GLONASS_NMEA_type> 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Integer type. Configure output type of GLONASS NMEA sentences in XOR 
+format.   
+0  Disable 
+1  GLGSV 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  15  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.1.5.  AT+QGPSCFG="galileonmeatype"    Configure Output Type of Galileo NMEA Sentences 
+
+This command configures the type of Galileo NMEA sentences that will be output. 
+
+AT+QGPSCFG="galileonmeatype" 
+Sentences 
+Write Command 
+AT+QGPSCFG="galileonmeatype
+"[,<Galileo_NMEA_type>] 
+
+  Configure  Output  Type  of  Galileo  NMEA 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "galileonmeatype",<Galileo_NMEA_type> 
+
+OK 
+
+If the optional parameter is specified, configure the output type of 
+Galileo NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<Galileo_NMEA_type> 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Integer  type.  Configure  output  type  of  Galileo  NMEA  sentences  in  XOR 
+format. 
+0  Disable 
+1  GAGSV 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.1.6.  AT+QGPSCFG="beidounmeatype"    Configure Output Type of BDS NMEA Sentences 
+
+This command configures the type of BDS NMEA sentences that will be output. 
+
+AT+QGPSCFG="beidounmeatype"    Configure Output Type of BDS NMEA Sentences 
+
+Write Command 
+AT+QGPSCFG="beidounmeatype
+"[,<BeiDou_NMEA_type>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "beidounmeatype",<BeiDou_NMEA_type> 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  16  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+OK 
+
+If the optional parameter is specified, configure the output type of 
+BDS NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<BeiDou_NMEA_type> 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Integer type. Configure output type of BDS NMEA sentences in XOR format. 
+0  Disable 
+1  PQGSA 
+2  PQGSV 
+4  PQGGA 
+8  PQRMC 
+16  PQVTG 
+31  All the five types of sentences 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.1.7.  AT+QGPSCFG="gnssnmeatype"    Configure Output Type of Multi-constellation NMEA 
+
+sentences 
+
+This command configures the type of multi-constellation NMEA sentences that will be output. 
+
+AT+QGPSCFG="gnssnmeatype" 
+NMEA sentences 
+
+  Configure  Output  Type  of  Multi-constellation 
+
+Write Command 
+AT+QGPSCFG="gnssnmeatype
+"[,<GNSS_NMEA_type>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "gnssnmeatype",<GNSS_NMEA_type> 
+
+OK 
+
+If the optional parameter is specified, configure the output type of 
+multi-constellation NMEA sentences: 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  17  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Parameter 
+
+<GNSS_NMEA_type> 
+
+Integer type. Configure output type of multi-constellation NMEA sentences in 
+XOR format. 
+0  Disable 
+1  GNGGA 
+2  GNRMC 
+4  GNGSA 
+8  GNVTG 
+15  All the four types of sentences 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.1.8.  AT+QGPSCFG="gnssconfig"    Configure Supported GNSS Constellations 
+
+This command configures the supported GNSS constellations of the module. 
+
+AT+QGPSCFG="gnssconfig"    Configure Supported GNSS Constellations 
+
+Write Command 
+AT+QGPSCFG="gnssconfig"[,<
+GNSS_config>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "gnssconfig",<GNSS_config> 
+
+OK 
+
+If the optional parameter is specified, configure the supported GNSS 
+constellations: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  18  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<GNSS_config> 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Integer type. Supported GNSS constellations.   
+0  GPS only 
+3  GPS + GLONASS + Galileo 
+4  GPS + GLONASS 
+5  GPS + BDS (When the module is EC200U-CN) 
+
+GPS  +  BDS  +  Galileo  (When  the  module  is  EC200U-AU,  EC200U-EU  or 
+EG912U-GL) 
+
+6  GPS + Galileo 
+7  BDS only 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.1.9.  AT+QGPSCFG="autogps"    Enable/Disable GNSS to Run Automatically 
+
+This command configures whether to enable GNSS when the module starts up. 
+
+AT+QGPSCFG="autogps"    Enable/Disable GNSS to Run Automatically 
+
+Write Command 
+AT+QGPSCFG="autogps"[,<auto
+GPS>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "autogps",<autoGPS> 
+
+OK 
+
+If the optional parameter is specified, configure whether to enable 
+GNSS to run automatically: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  19  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Parameter 
+
+<autoGPS> 
+
+Integer type. Enable/disable GNSS to run automatically.   
+0  Disable 
+1  Enable 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.1.10. AT+QGPSCFG="beidounmeaformat"    Configure Prefix of BDS NMEA Sentences 
+
+This command configures prefix of BDS NMEA sentences. 
+
+AT+QGPSCFG="beidounmeaformat"    Configure Prefix of BDS NMEA Sentences 
+
+Write Command 
+AT+QGPSCFG="beidounmeafor
+mat"[,<BeiDou_NMEA_format>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "beidounmeaformat",<BeiDou_NMEA_format> 
+
+OK 
+
+If the optional parameter is specified, configure the prefix of BDS 
+NMEA sentences: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+Parameter 
+
+<BeiDou_NMEA_format> 
+
+The command takes effect after rebooting; 
+The configuration is saved automatically. 
+
+Integer type. Prefix of BDS NMEA sentences. 
+0  PQ 
+1  GB 
+2  BD 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  20  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+⚫   
+
+NOTE 
+
+If <BeiDou_NMEA_format>=0, the output PQGSV sentence contains system ID (GNSS system ID 
+defined by NMEA protocol) at the end of the sentence. 
+
+2.3.1.11. AT+QGPSCFG="apflash"    Enable/Disable AP Flash Quick Hot Start 
+
+This command enables or disables AP Flash quick hot start. 
+
+AT+QGPSCFG="apflash"    Enable/Disable AP Flash Quick Hot Start 
+
+Write Command 
+AT+QGPSCFG="apflash"[,<AP_
+flash_mode>] 
+
+Response 
+If the optional parameter is omitted, query the current configuration: 
++QGPSCFG: "apflash",<AP_flash_mode> 
+
+OK 
+
+If the optional parameter is specified,  configure whether to  enable   
+AP Flash quick hot start: 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+The command takes effect immediately; 
+The configuration is not saved. 
+
+Parameter 
+
+<AP_flash_mode> 
+
+Integer type. Enable or disable AP Flash quick hot start. 
+0  Disable 
+1  Enable 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.2.  AT+QGPSDEL    Delete Assistance Data 
+
+The command deletes assistance data so as to perform cold start, hot start and warm start of GNSS. The 
+command can only be executed when GNSS is turned on. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  21  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+AT+QGPSDEL    Delete Assistance Data 
+
+Test Command 
+AT+QGPSDEL=? 
+
+Response 
++QGPSDEL: (range of supported <delete_type>s) 
+
+Write Command 
+AT+QGPSDEL=<delete_type> 
+
+OK 
+
+Response 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<delete_type> 
+
+Integer type. The type of GNSS assistance data to be deleted.   
+0  Delete all assistance data. Enforce cold start after starting GNSS. 
+1  Do not delete any data. Perform hot start if conditions permit after starting GNSS. 
+2  Delete some related data. Perform warm start if conditions permit after starting 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+GNSS. 
+
+2.3.3.  AT+QGPS    Turn on GNSS 
+
+This command turns on or wakes up GNSS function. When <fix_count> is 0, GNSS engine continues to 
+locate and can be turned off via AT+QGPSEND. When <fix_count> is non-zero and the actual positioning 
+times reach the specified value, GNSS engine turns off automatically; when <fix_count> is non-zero but 
+the  actual  positioning  times  don’t  reach  the  specified  value,  GNSS  also  can  be  turned  off  via 
+AT+QGPSEND. 
+
+AT+QGPS    Turn on GNSS 
+
+Test Command 
+AT+QGPS=? 
+
+Response 
+(list  of  supported  <GNSS_mode>s),(range  of 
++QGPS: 
+supported 
+supported 
+<fix_maxdist>s),(range of supported <fix_count>s),(range of 
+supported <fix_rate>s) 
+
+<fix_maxtime>s),(range 
+
+of 
+
+OK 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  22  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Read Command 
+Read current GNSS state 
+AT+QGPS? 
+
+Response 
++QGPS: <GNSS_state> 
+
+Write Command 
+AT+QGPS=<GNSS_mode>[,<fix_ma
+xtime>[,<fix_maxdist>[,<fix_count>[
+,<fix_rate>]]]] 
+
+OK 
+
+Response 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<GNSS_state> 
+
+Integer type. GNSS state. 
+0  Off 
+1  On 
+
+<GNSS_mode> 
+
+Integer type. GNSS working mode. 
+1  Stand-alone 
+
+<fix_maxtime> 
+
+Integer type. The maximum positioning time, which indicates the response time of 
+GNSS receiver while measuring the GNSS pseudo range and the upper time limit of 
+GNSS satellite searching. It also includes the time for demodulating the ephemeris 
+data and calculating the position. Range: 1–255. Default value: 30. Unit: second. 
+
+<fix_maxdist> 
+
+Integer type. Accuracy threshold of positioning. Range: 0–1000. Default value: 50. 
+Unit: meter.   
+
+<fix_count> 
+
+Integer type. Positioning times. Range: 0–1000. 
+0 
+Other values  
+
+Continuous positioning 
+Actual positioning times 
+
+<fix_rate> 
+
+Integer type. The interval between the first and the second positioning.   
+Range: 1–65535. Default value: 1. Unit: second. 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+⚫   
+
+NOTE 
+
+Only after GNSS is turned on successfully by AT+QGPS=1 and GNSS Open Success is output from 
+AP log, you can perform other GNSS related actions. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  23  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.4.  AT+QGPSEND    Turn off GNSS 
+
+This command turns off GNSS. When GNSS is turned on by AT+QGPS=1 and <fix_count> is 0, GNSS 
+fixes  position  continuously.  GNSS  stops  positioning  when  it  is  turned  off  via  AT+QGPSEND.  You  can 
+execute AT+QGPS=1 within 2 hours if AP Flash is enabled and effective to turn on the GNSS and wake 
+up the GNSS engine, and then the GNSS engine will perform a hot start by default.   
+
+AT+QGPSEND    Turn off GNSS 
+
+Test Command   
+AT+QGPSEND=? 
+
+Read command 
+AT+QGPSEND? 
+
+Execution Command 
+Turn off GNSS 
+AT+QGPSEND 
+
+Response 
+OK 
+Or 
+ERROR 
+
+Response 
+OK 
+Or 
+ERROR 
+
+Response 
+OK 
+Or 
+ERROR 
+
+If there is any error related to ME functionality: 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.5.  AT+QGPSLOC    Acquire Positioning Information 
+
+This command acquires positioning information. Before executing this command, GNSS should be turned 
+on  via AT+QGPS.  If  GNSS  fails  in  position  fix,  +CME  ERROR:  <errcode>  is  returned  to  indicate  the 
+corresponding situation. 
+
+AT+QGPSLOC    Acquire Positioning Information 
+
+Test  Command 
+AT+QGPSLOC=? 
+
+Response 
++QGPSLOC:  <UTC>,<latitude>,<longitude>,<HDOP>,<alt
+itude>,<fix>,<COG>,<spkm>,<spkn>,<date>,<nsat> 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  24  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+OK 
+
+Write  Command 
+AT+QGPSLOC=<mode> 
+
+Response 
++QGPSLOC:  <UTC>,<latitude>,<longitude>,<HDOP>,<alt
+itude>,<fix>,<COG>,<spkm>,<spkn>,<date>,<nsat> 
+
+OK 
+
+If  there  is  any  error  related  to  ME  functionality: 
++CME  ERROR:  <errcode> 
+
+Maximum  Response  Time 
+
+300  ms 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<mode> 
+
+Integer type. Latitude and longitude display format. 
+0  <latitude>,<longitude> format: ddmm.mmmmN/S,dddmm.mmmmE/W 
+1  <latitude>,<longitude> format: ddmm.mmmmmm,N/S,dddmm.mmmmmm,E/W 
+2  <latitude>,<longitude> format: (-)dd.ddddd,(-)ddd.ddddd 
+
+<UTC> 
+
+String type. UTC time. Format: hhmmss.sss (Quoted from GPGGA sentence). 
+
+<latitude> 
+
+String type. Latitude. 
+If <mode> is 0:   
+Format: ddmm.mmmmN/S (Quoted from GPGGA sentence) 
+Degree. Range: 00–89 
+dd 
+Minute. Range: 00.0000–59.9999 
+mm.mmmm   
+North/South 
+N/S  
+
+If <mode> is 1: 
+Format: ddmm.mmmmmm,N/S (Quoted from GPGGA sentence) 
+dd 
+mm.mmmmmm    Minute. Range: 00.000000–59.999999 
+N/S  
+
+Degree. Range: 00–89 
+
+North/South 
+
+<longitude> 
+
+If <mode> is 2: 
+Format: (-)dd.ddddd (Quoted from GPGGA sentence) 
+Degree. Range: -89.9999–89.9999 
+dd.ddddd 
+South 
+- 
+
+String type. Longitude. 
+If <mode> is 0: 
+Format: dddmm.mmmmE/W (Quoted from GPGGA sentence) 
+Degree. Range: 000–179. 
+ddd  
+Minute. Range: 00.0000–59.9999. 
+mm.mmmm   
+East/West 
+E/W  
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  25  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+If <mode> is 1: 
+Format: dddmm.mmmmmm,E/W (Quoted from GPGGA sentence) 
+ddd  
+mm.mmmmmm    Minute. Range: 00.000000–59.999999 
+E/W  
+
+Degree. Range: 000–179. 
+
+East/West 
+
+If <mode> is 2: 
+Format: (-)ddd.ddddd (Quoted from GPGGA sentence) 
+ddd.ddddd 
+- 
+
+Degree. Range: -179.99999–179.99999 
+
+  West 
+
+<HDOP> 
+
+Horizontal dilution of precision. Range: 0.5–99.9 (Quoted from GPGGA sentence). 
+
+<altitude> 
+
+<fix> 
+
+<COG> 
+
+<spkm> 
+
+<spkn> 
+
+<date> 
+
+The altitude  of  the antenna  away  from  the  sea level,  and  is accurate  to  one  decimal 
+place. Unit: meter (Quoted from GPGGA sentence). 
+
+Integer type. GNSS positioning mode (Quoted from GPGSA sentence). 
+2 
+3 
+
+2D positioning 
+3D positioning 
+
+String type. Course Over Ground based on true north.   
+Format: ddd.mm (Quoted from GPVTG sentence). 
+ddd  
+mm  
+
+Degree. Range: 000–359 
+Minute. Range: 00–59 
+
+Speed over ground. Accurate to one decimal place. Unit: km/h (Quoted from GPVTG 
+sentence). 
+
+Speed over ground. Accurate to one decimal place. Unit: knots (Quoted from GPVTG 
+sentence). 
+
+UTC date. Format: ddmmyy (Quoted from GPRMC sentence). 
+dd 
+mm  
+yy 
+
+Day 
+Month 
+Year 
+
+<nsat> 
+
+Number of satellites. The value should be kept two digits, and add 0 If the leading digit 
+is insufficient (Quoted from GPGGA sentence). 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  26  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+2.3.6.  AT+QGPSGNMEA    Acquire Specified NMEA Sentences 
+
+This  command  acquires  specified  NMEA  sentences.  Before  using  this  command,  turn  on  GNSS  via 
+AT+QGPS, and set <NMEA_src> to 1 to enable acquisition of NMEA sentences via AT+QGPSGNMEA.   
+
+be 
+
+can 
+
+output 
+
+disabled 
+
+sentence 
+
+AT+QGPSCFG="gpsnmeatype",0, 
+The 
+AT+QGPSCFG="galileonmeatype",0, 
+AT+QGPSCFG="glonassnmeatype",0, 
+AT+QGPSCFG="beidounmeatype",0  or  AT+QGPSCFG="gnssnmeatype",0.  If  sentence  output  is 
+disabled, the updated sentence is no longer output, and the NMEA sentence acquired before sentence 
+output is disabled and after the GNSS is activated is saved. If the saved NMEA sentence contains the 
+sentence type specified by AT+QGPSGNMEA, the specified NMEA sentence can still be acquired through 
+AT+QGPSGNMEA. 
+
+via 
+
+AT+QGPSGNMEA    Acquire Specified NMEA Sentences 
+
+Test Command 
+AT+QGPSGNMEA=? 
+
+Response 
++QGPSGNMEA:  (list  of  supported  <NMEA_type>s) 
+
+Write Command 
+Query GGA sentence   
+AT+QGPSGNMEA="GGA" 
+
+Write Command   
+Query RMC sentence 
+AT+QGPSGNMEA="RMC" 
+
+Write Command   
+Query GSV sentence 
+AT+QGPSGNMEA="GSV" 
+
+Write Command   
+Query GSA sentence 
+AT+QGPSGNMEA="GSA" 
+
+OK 
+
+Response 
+[+QGPSGNMEA: <GGA_sentence>] 
+
+OK 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Response 
+[+QGPSGNMEA: <RMC_sentence>] 
+
+OK 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Response 
+[+QGPSGNMEA: <GSV_sentence>] 
+
+OK 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Response 
+[+QGPSGNMEA: <GSA_sentence>] 
+
+OK 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  27  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Write Command   
+Query VTG sentence 
+AT+QGPSGNMEA="VTG" 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Response 
+[+QGPSGNMEA: <VTG_sentence>] 
+
+OK 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<NMEA_type> 
+
+String type. NMEA sentence type. 
+"GGA"  GGA sentence 
+"RMC"  RMC sentence 
+"GSV"  GSV sentence 
+"GSA"  GSA sentence 
+"VTG"  VTG sentence 
+
+<GGA_sentence>  String type. GGA sentences. 
+
+<RMC_sentence>  String type. RMC sentences. 
+
+<GSV_sentence>  String type. GSV sentences. 
+
+<GSA_sentence>  String type. GSA sentences. 
+
+<VTG_sentence>  String type. VTG sentences. 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+2.3.7.  AT+QAGPS    Enable/Disable AGPS 
+
+This command enables or disables AGPS feature of GNSS. 
+
+AT+QAGPS    Enable/Disable AGPS 
+
+Test Command 
+AT+QAGPS=? 
+
+Response 
++QAGPS:  (list  of  supported  <AGPS_mode>s) 
+
+Read Command 
+Query whether AGPS is enabled 
+AT+QAGPS? 
+
+OK 
+
+Response 
++QAGPS: <AGPS_mode>   
+
+OK   
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  28  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Write Command 
+Enable or disable AGPS 
+AT+QAGPS=<AGPS_mode> 
+
+Response 
+OK 
+
+Maximum Response Time 
+
+300 ms 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Characteristics 
+
+Parameter 
+
+<AGPS_mode> 
+
+<errcode> 
+
+The command takes effect immediately; 
+The configuration is saved automatically. 
+
+Integer type. Enable or disable AGPS feature of GNSS.   
+0  Disable 
+1  Enable 
+The error code of operation. See Chapter 4 for details. 
+
+2.3.8.  AT+QAGPSCFG    Configure AGPS 
+
+This command configures AGPS related parameters. 
+
+AT+QAGPSCFG    Configure AGPS 
+
+Test Command 
+AT+QAGPSCFG=? 
+
+Read Command 
+AT+QAGPSCFG? 
+
+Response 
++QAGPSCFG:  (range  of  supported  <profile>s),<URL>,<ve
+ndorID>,<modelID>,<password>,(range  of  supported  <IP_
+ver>s),<APN> 
+
+OK 
+
+Response 
++QAGPSCFG:  <profile>,<URL>,<vendorID>,<modelID>,<p
+assword>,<IP_ver>,<APN> 
+
+Write Command 
+AT+QAGPSCFG=<profile>[,<URL>[,
+<vendorID>[,<modelID>[,<passwor
+d>[,<IP_ver>>[,<APN>]]]]]] 
+
+OK 
+
+Response 
+OK 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+Maximum Response Time 
+
+300 ms 
+
+Characteristics 
+
+The command takes effect immediately; 
+The configuration is saved automatically. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  29  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Parameter 
+
+<profile> 
+<URL> 
+
+Integer type. PDP index. Range: 1–7. Default value: 1.   
+String type. AGPS server address.   
+Default value: "http://quectel-api1.rx-networks.cn/rxn-api/locationApi/rtcm". 
+String type. User name. Default value: "wLgWwv6JQt". The maximum length: 30 bytes. 
+String type. Client ID. Default value: "Quectel". 
+
+<vendorID> 
+<modelID> 
+<password>  String type. Password. Default value: "aFltUERDZzZxeTY5cEp2eA==". The maximum 
+
+length: 30 bytes. 
+Integer type. IP type. 
+0  The IP type configured when the specified PDP context was activated last time 
+1 
+2 
+3 
+Note: If the specified PDP context has never been activated, the default value is 1. 
+String type. Access point name. Default value: "NULL". Maximum length: 99 bytes. 
+The error code of operation. See Chapter 4 for details. 
+
+IPv4 
+IPv6 
+IPv4v6 
+
+<IP_ver> 
+
+<APN> 
+<errcode> 
+
+NOTE 
+
+After AGPS feature is enabled, the PDP context specified by <profile> may be de-activated. So, do not 
+use the same PDP context with other applications at the same time, preventing the application from 
+abnormal network disconnection and restarting a data call. 
+
+2.3.9.  AT+QGPSINFO    Query GNSS Version 
+
+This command queries GNSS version information. 
+
+AT+QGPSINFO    Query GNSS Version 
+
+Test Command 
+AT+QGPSINFO=? 
+
+Read Command 
+AT+QGPSINFO? 
+
+Execution Command 
+AT+QGPSINFO 
+
+Response 
+OK 
+
+Response 
+OK   
+
+Response 
++QGPSINFO: <GNSS_info> 
+
+OK 
+
+Maximum Response Time 
+
+300 ms 
+
+If there is any error related to ME functionality: 
++CME ERROR: <errcode> 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  30  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+Characteristics 
+
+/ 
+
+Parameter 
+
+<GNSS_info> 
+
+String type. GNSS version information. 
+
+<errcode> 
+
+The error code of operation. See Chapter 4 for details. 
+
+Example 
+
+AT+QGPSINFO    
++QGPSINFO: UC6226,G1B1,V1.0,R3.0.0Build1500,080101800600 
+
+//Query GNSS version.   
+
+OK 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  31  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+3  Examples 
+
+3.1. Turn On/Off the GNSS 
+
+Default parameters are used in this example to turn on GNSS. After turning on GNSS, NMEA sentences 
+will be output from "usbnmea" port by default; and GNSS can be turned off via AT+QGPSEND. 
+
+        //Turn on GNSS. 
+
+AT+QGPS=1  
+OK 
+//After turning on GNSS, NMEA sentences will be output from "usbnmea" port by default. 
+AT+QGPSLOC=0  
++QGPSLOC: 061951.000,3150.7223N,11711.9293E,0.7,62.2,2,000.00,0.0,0.0,110513,09 
+
+//Obtain positioning information. 
+
+OK 
+AT+QGPSEND 
+OK 
+
+        //Turn off GNSS. 
+
+3.2. Application of <NMEA_src> 
+
+When GNSS is turned on and  <NMEA_src> is set to 1, NMEA sentences can be acquired directly via 
+AT+QGPSGNMEA. 
+
+AT+QGPSCFG="nmeasrc",1   
+
+//Set <NMEA_src> to 1 to enable acquisition of NMEA 
+  sentences via AT+QGPSGNMEA. 
+
+OK 
+AT+QGPSGNMEA="GGA" 
++QGPSGNMEA: $GNGGA,074113.00,3148.57843,N,11718.02170,E,1,18,1.17,22.3,M,,M,,*68 
+
+//Obtain GGA sentence. 
+
+OK 
+AT+QGPSCFG="nmeasrc",0   
+
+OK 
+AT+QGPSGNMEA="GGA"   
++CME ERROR: 507 
+
+//Set <NMEA_src> to 0 to disable acquisition of NMEA 
+  sentences via AT+QGPSGNMEA. 
+
+//Obtain GGA sentence. 
+//Acquisition of NMEA sentences via AT+QGPSGNMEA   
+  was disabled, and thus GGA sentences cannot be obtained. 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  32  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+3.3. GNSS Hibernation Mode   
+
+After the module is powered on and GNSS is turned on, executing AT+QGPSEND without powering down 
+or  rebooting  the  module  can  turn  off  the  GNSS  engine  and  stop  positioning  to  lower  down  power 
+consumption. If AT+QGPS=1 is executed within 2 hours after AP Flash is enabled and effective to wake 
+up the GNSS engine, GNSS hot start is performed to achieve a quick positioning.   
+
+                  //Turn on GNSS.   
+
+AT+QGPS=1   
+OK 
+AT+QGPSEND 
+OK 
+//Turn off GNSS without powering down or rebooting the module. Then the GNSS engine is powered off 
+and stops positioning, but the ephemeris data is saved.     
+AT+QGPSLOC=0                        //Acquire positioning information. 
++CMS ERROR: 505                    //GNSS feature is unavailable. 
+AT+QGPS=1   
+
+//Turns on GNSS within 2 hours after AP Flash is enabled and effective, 
+then GNSS performs a hot start.   
+
+OK 
+AT+QGPSLOC=0  
++QGPSLOC: 121251.000,2301.4623N,11314.4612E,0.8,141.6,3,000.00,0.5,0.3,020321,20 
+
+//Acquire positioning information. 
+
+OK 
+
+3.4. Application of AGPS Feature 
+
+AT+QAGPSCFG configures AGPS related parameters. AT+QAGPS=1 enables AGPS feature. Ephemeris 
+data can be acquired automatically every time when the module is powered on and the GNSS is turned 
+on under the premise that the network is normal and the AGPS related parameters are configured correctly, 
+achieving a quick positioning.     
+
+//Configure  AGPS. 
+
+AT+QAGPSCFG=1,"http://quectel-api1.rx-networks.cn/rxn-api/locationApi/rtcm","wLgWwv6JQt"," 
+Quectel","aFltUERDZzZxeTY5cEp2eA==",1,"ctnet"  
+OK 
+AT+QAGPS=1 
+OK 
+AT+QGPS=1  
+OK 
+AT+QFLST="*" 
++QFLST: "UFS:agps.txt",5020   
+
+//See document [1] for details. 
+
+//Enable AGPS feature. 
+
+//Turn on GNSS. 
+
+//The downloaded ephemeris data is valid for 2 hours, and you need 
+  to reconnect server to download new ephemeris data after 2 hours.   
+
+OK 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  33  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+4  Summary  of  Error  Codes 
+
+The <errcode> indicates an error related to GNSS operation. The details about <errcode> are described 
+in the following table. 
+
+Table 3: Summary of Error Codes   
+
+<errcode> 
+
+Meaning 
+
+501 
+
+502 
+
+503 
+
+504 
+
+505 
+
+506 
+
+507 
+
+508 
+
+512 
+
+513 
+
+514 
+
+515 
+
+516 
+
+517 
+
+549 
+
+Invalid parameter(s) 
+
+Operation not supported 
+
+GNSS subsystem busy 
+
+Session is ongoing 
+
+Session not active 
+
+Operation timeout 
+
+Function not enabled 
+
+Time information error 
+
+Validity time is out of range 
+
+Internal resource error 
+
+GNSS locked 
+
+End by E911 
+
+Not fixed now 
+
+CMUX port is not opened 
+
+Unknown error 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  34  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+5  Appendix  References 
+
+Table 4: Related Document 
+
+Document Name 
+
+[1]  Quectel_EC200U&EG91xU_Series_FILE_Application_Note 
+
+Table 5: Terms and Abbreviations 
+
+Abbreviation 
+
+Description 
+
+AGPS 
+
+APN 
+
+BDS 
+
+CMUX 
+
+DOP 
+
+Galileo 
+
+GGA 
+
+Assisted GPS (Global Positioning System) 
+
+Access Point Name 
+
+BeiDou Navigation Satellite System 
+
+Connection Multiplexing 
+
+Dilution of Precision 
+
+Galileo Satellite Navigation System 
+
+Global Positioning System Fix Data 
+
+GLONASS 
+
+Global Navigation Satellite System 
+
+GNSS 
+
+Global Navigation Satellite System 
+
+GPS 
+
+GSA 
+
+GSV 
+
+IP 
+
+IPv4 
+
+IPv6 
+
+Global Positioning System 
+
+GPS DOP and Active Satellites 
+
+GNSS Satellites in View 
+
+Internet Protocol 
+
+Internet Protocol version 4 
+
+Internet Protocol version 6 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  35  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+ 
+                                                                    LTE  Standard  Module  Series 
+
+ME 
+
+NMEA 
+
+Mobile Equipment 
+
+NMEA (National Marine Electronics Association) 0183 Interface Standard 
+
+NVRAM 
+
+Non-Volatile Random Access Memory 
+
+RMC 
+
+UART 
+
+URL 
+
+USB 
+
+UTC 
+
+VTG 
+
+Recommended Minimum Specific GNSS Data 
+
+Universal Asynchronous Receiver & Transmitter 
+
+Uniform Resource Locator 
+
+Universal Serial Bus 
+
+Coordinated Universal Time 
+
+Course Over Ground and Ground Speed 
+
+EC200U_Series&EG915U-GL_GNSS_Application_Note                                                                  36  / 36 
+
+                                                                                                                                               
+ 
+ 
+ 
+ 
+
